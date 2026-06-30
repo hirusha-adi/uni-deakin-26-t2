@@ -1,0 +1,95 @@
+Task1_1P.html#document
++-- <!DOCTYPE html>
+`-- <html lang="en">
+    +-- <head>
+    |   +-- <meta charset="utf-8">
+    |   +-- <meta name="author" content="Funny Guy">
+    |   +-- <meta name="description" content="Some funny jokes and pretty pictures.">
+    |   +-- <meta name="description" content="Some funny jokes and pretty pictures.">
+    |   `-- <title>
+    |       `-- #text "Jokes and Pictures"
+    |
+    `-- <body>
+        +-- <h1>
+        |   `-- #text "Silly Jokes"
+        |
+        +-- <div id="jokes">
+        |   +-- <h2>
+        |   |   `-- #text "Silly Jokes"
+        |   |
+        |   +-- <p>
+        |   |   +-- #text "There are many funny jokes that we have heard. Some of the best are the silly ones, often called"
+        |   |   +-- em
+        |   |   |   `-- #text "Dad Jokes"
+        |   |   `-- #text "! Here are a few examples."
+        |   |
+        |   `-- <ul>
+        |       +-- <li>
+        |       |   `-- <p>
+        |       |       +-- <strong>
+        |       |       |   `-- #text "Q."
+        |       |       +-- #text " What do you call an angry carrot?"
+        |       |       +-- <br>
+        |       |       `-- <em>
+        |       |           +-- <strong>
+        |       |           |   `-- #text "A."
+        |       |           `-- #text " A steamed veggie."
+        |       |
+        |       +-- <li>
+        |       |   `-- <p>
+        |       |       +-- <strong>
+        |       |       |   `-- #text "Q."
+        |       |       +-- #text " What has more lives than a cat?"
+        |       |       +-- <br>
+        |       |       `-- <em>
+        |       |           +-- <strong>
+        |       |           |   `-- #text "A."
+        |       |           `-- #text " A frog, because it croaks every day."
+        |       |
+        |       `-- <li>
+        |           `-- <p>
+        |               +-- <strong>
+        |               |   `-- #text "Q."
+        |               +-- #text " What does a baby computer call his father?"
+        |               +-- <br>
+        |               `-- <em>
+        |                   +-- <strong>
+        |                   |   `-- #text "A."
+        |                   `-- #text " Data!"
+        |
+        +-- <div id="catnames">
+        |   +-- <h2>
+        |   |   `-- #text "Top 5 Funny Dog Names"
+        |   |
+        |   +-- <p>
+        |   |   `-- #text "People can come up with very creative names for pets!"
+        |   |
+        |   `-- <ol>
+        |       +-- <li>
+        |       |   `-- #text "Winnie the Poodle"
+        |       +-- <li>
+        |       |   `-- #text "Sherlock Bones"
+        |       +-- <li>
+        |       |   `-- #text "Bark Twain"
+        |       +-- <li>
+        |       |   `-- #text "Hairy Paw-ter"
+        |       `-- <li>
+        |           `-- #text "Santa Paws"
+        |
+        +-- <div id="images">
+        |   +-- <h2>
+        |   |   `-- #text "Some Pictures of Kittens"
+        |   |
+        |   +-- <p>
+        |   |   `-- #text "The internet is full of cute pictures of cats, here are some pictures of cute kittens."
+        |   |
+        |   +-- <img src="https://placekitten.com/g/320/320">
+        |   `-- <img src="https://placekitten.com/g/320/240">
+        |
+        `-- <hr>
+
+
+
+
+
+
