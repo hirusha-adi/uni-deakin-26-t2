@@ -1,0 +1,50 @@
+1.17 Responsive workflow and Performance
+Learning Goals
+By the end of this topic, you should be able to:
+
+Understand the principles and steps involved in a responsive workflow.
+Recognise strategies to enhance performance in responsive web design.
+What is Workflow?
+
+Workflow refers to the structured sequence of steps and processes used to achieve a specific goal—in this case, creating a responsive website. A well-defined workflow helps ensure that each aspect of the website design and development process is systematically addressed.
+
+Steps in a Responsive Website Workflow:
+
+Research and Target Audience: Conduct research to identify your target audience and their needs.
+User Stories: Create a list of user stories to analyse user problems and requirements.
+Sketching: Develop initial sketches to outline general ideas for your website layout.
+Wireframing: Design wireframes to establish the structure and layout of your website.
+UX/UI Design: Develop the user experience (UX) and user interface (UI) designs to refine the look and feel.
+Prototyping and Testing: Create prototypes to visualise and test your design, gathering feedback for improvements.
+Validation: Validate the final product to ensure it meets user needs and performs well across different devices.
+Performance
+To ensure that your responsive website performs well, consider the following points:
+
+Web Running Time and Tracking Tools: Monitor your website’s running time and use performance tracking tools to identify and address any issues. Tools such as Google PageSpeed Insights, Lighthouse, or GTmetrix can provide insights into performance and suggest improvements.
+Front-End Optimisation: Evaluate the front-end of your site, including the loading times for pages, images, styles, and content. Look for opportunities to optimise:
+Image Quality and Size: Reduce image quality and file sizes where possible to decrease loading times without significantly impacting visual quality.
+CSS and JavaScript: Minimise and combine CSS and JavaScript files to reduce the number of HTTP requests and improve load times.
+Staying Ahead in SEO: Balancing Traditional Techniques with AI Innovations
+In 2026, SEO has entered a new phase, AI search is no longer on the horizon, it is the present reality. Google AI Overviews now appear on nearly half of all queries, zero-click searches have reached 68%, and the metrics for measuring SEO success are shifting. Despite this transformation, the fundamentals remain essential: keywords, backlinks, technical SEO, and on-page optimisation still drive visibility. What has changed is how content earns attention. Experience, Expertise, Authoritativeness, and Trustworthiness (E-E-A-T) has become critical, content must demonstrate real-world experience and human judgement, not just topical coverage. Freshness also carries more weight, as AI systems prioritise current, regularly updated information over static articles.
+
+Voice search continues to grow, used by approximately one in five people globally. Optimising for voice means targeting conversational, long-tail queries and aiming for featured snippets. Pair this with mobile responsiveness, fast loading times, and structured data to ensure visibility across all surfaces. Use AI tools to support efficiency in drafting and structure, but ensure expert input shapes the final content, authentic experience is what both users and algorithms now reward. Remain analytical and adaptive: monitor how AI Overviews affect your traffic, refresh evergreen content regularly, and build a brand and backlink profile that signals genuine authority.
+
+Video
+Your Old SEO Strategy Won't Work in 2026. Here's Why
+
+
+
+SEO Definition
+
+
+
+Activities
+Open the browser and check the Performance section to identify any issues that might be affecting performance. Then, try to find and implement solutions to address these issues.
+Resources
+The Evolving Landscape of SEO: Balancing AI Innovations with Tried-and-True Methods: https://www.linkedin.com/pulse/evolving-landscape-seo-balancing-ai-innovations-methods-ajay-naha-u1f0e/
+Best Practices for Building Responsive design in 2024: https://dev.to/linusmwiti21/best-practises-for-building-responsive-design-in-2024-48c4
+UX Optimisation: 4 Steps to deliver a better user experience: https://uxcam.com/blog/user-experience-ux-optimization/#:~:text=A%20good%20way%20to%20start,improvement%20in%20terms%20of%20performance.
+Zero-click searches hit 68% in early 2026: https://www.relevantaudience.com/seo/google-zero-click-hit-68-percent-in-2026/
+Best practices for AI search (E-E-A-T, freshness, structured content): https://writesonic.com/blog/seo-for-ai-search-engines
+How Google's AI Overviews Are Changing SEO in 2026: https://www.enfuse-solutions.com/how-googles-ai-overviews-are-changing-seo-in-2026/
+Complete AI SEO guide (voice, speed, structured data): https://monsterinsights.com/ai-search-engine-optimization-the-complete-ranking-guide/

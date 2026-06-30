@@ -1,0 +1,38 @@
+1.8 User Stories
+Learning Goals
+By the end of this topic, you should be able to:
+
+Create a user story
+Use the user story to analyse problems
+Design a website page based on the user story
+What are user stories?
+A user story describes what a target user might do with your product. It helps you understand why the user would utilise your product. By writing user stories, you can identify their requirements and issues related to your product or website.
+
+A user story typically follows this format:
+
+As a [Who], I want to [What], so [Why]
+
+Before you start, consider the following points:
+
+What do they want to achieve?
+What problems do they want to resolve?
+For example:
+
+As a frequent traveller, I want to easily book flights and accommodations in one app, so I can save time and manage my trips more efficiently.
+As a busy professional, I want to receive reminders for upcoming deadlines, so I can stay organised and ensure I meet all my work commitments.
+As a new user of a fitness app, I want to see personalised workout recommendations based on my goals, so I can have a tailored fitness plan that suits my needs.
+As a customer with a food allergy, I want to filter restaurant menu options by allergy-friendly ingredients, so I can safely choose meals without worrying about allergic reactions.
+Video:
+2. Creating User Stories | UX Design | XMPRO
+
+
+
+User Scenarios, User Stories & User Story Mapping Explained
+
+
+
+Activities
+Make a list of user stories and analyse potential issues. Use these issues to guide the design of your website page.
+Resources
+User story templates with step-by-step guidance: https://www.aha.io/roadmapping/guide/requirements-management/what-is-a-good-feature-or-user-story-template
+User Stories with Examples and Template: https://www.atlassian.com/agile/project-management/user-stories

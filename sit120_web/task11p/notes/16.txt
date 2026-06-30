@@ -1,0 +1,48 @@
+1.6 Develop Project Plan
+Learning Goals
+By the end of this topic, you should be able to:
+
+Create a project plan
+Develop a brief for your product
+
+Start a project plan
+When working on your project, you should have a plan to present to stakeholders or team members. Consider including the following points:
+
+Reasons (Why): Explain why the project is important and the problem it aims to solve.
+Things (What): Outline what the project will include, such as features and deliverables.
+Methods (How): Describe how you will execute the project, including the processes and tools you will use.
+Additionally, assess how your product features compare to those of your competitors.
+
+You might also include market analysis, such as relevant data or statistics, to demonstrate what makes your product unique and why it is worth developing.
+
+Asset List plan
+Creating a list of assets is crucial for understanding how they will be used and described. This helps ensure that others can easily read and utilise them.
+
+For instance:
+
+Asset Name: index.html
+
+How to Be Used: Serves as the main connection point for all pages, including the general layout with elements such as the header, main content, and footer.
+Details: File type is HTML.
+Asset Name: logo.png
+Purpose: The website's logo used in the header and other branding areas.
+Details: PNG image file.
+Video
+If I Started UX in 2024, I'd Do This
+
+
+
+If I started UI/UX Design in 2024, I'd Do This!
+
+
+
+Starting a New UX Project
+
+
+
+Activities
+You are now ready to start. Create a small project plan as quickly as possible. Writing a project summary will help you understand your target needs, while an asset list will provide a clear structure for your project.
+Resources
+How to Create a UX Project Plan: https://digitalmedianinja.com/blog/what-is-responsive-web-design/
+How To Create a Project Plan: the foolproof way to guarantee the success of any project: https://www.youtube.com/watch?v=ntQ1Mx3GZwk
+UX Project Planning - Best Practices for the UX Design Process: https://www.youtube.com/watch?v=ZcDoMHF9-cY

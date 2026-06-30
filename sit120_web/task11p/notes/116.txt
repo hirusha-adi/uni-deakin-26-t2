@@ -1,0 +1,75 @@
+1.16 Responsive Layout
+Learning Goals
+By the end of this topic, you should be able to:
+
+Understand breakpoints for different devices and how they impact responsive design.
+Learn about grid systems and how they facilitate layout design in responsive web development.
+Grid system - Recap
+A grid system is essential for creating a consistent and organised layout across different devices in responsive web design. It typically consists of a framework with a set number of columns—commonly 12 columns—that helps structure and align content effectively on the page.
+
+Key Features:
+
+Consistency: Ensures a uniform layout across various screen sizes and devices.
+Flexibility: Allows for easy adjustments and alignment of content.
+Organisation: Helps in dividing the page into manageable sections, enhancing the user experience.
+By using a grid system, you can efficiently organise content and maintain a cohesive design, making it easier to achieve a visually appealing and user-friendly interface.
+
+The bootstrap grid system divides the screen into 12 columns.
+Image Source: https://www.howtocanvas.com/create-amazing-pages-in-canvas/bootstrap
+Breakpoints
+Each device has a range of resolutions, and responsive design ensures that content adapts appropriately to different screen sizes. Breakpoints help manage how text, images, and other elements are displayed across various devices.
+
+Common Breakpoints for Responsive Web Design:
+
+Mobile: Typically up to 480px. Some designs may accommodate smaller or larger widths depending on the device range.
+Tablet: Often starts from 481px and extends to around 1024px or 1280px for larger tablets.
+Desktop: 1024px and above (usually up to 1440px, but can vary).
+Extra Large: For large monitors or high-resolution displays, breakpoints might start from 1200px, 1440px, or even higher.
+Note that these values can vary based on current device trends and user behaviour. Designers may use a range of breakpoints or adopt a fluid layout that adjusts based on content and container size, ensuring a good user experience across all screen sizes.
+
+Progressive Web Apps (PWAs)
+
+Progressive Web Apps (PWAs) are a mature and widely adopted approach to web application development, blending the best features of web and mobile apps to deliver a seamless user experience across devices. PWAs leverage modern web technologies to provide functionality that mimics native apps, including offline capabilities, push notifications, and fast loading times, all while being accessible through a standard web browser.
+
+Key characteristics of PWAs include:
+
+Offline Access: Through service workers, PWAs can cache resources and provide a functional experience even without an internet connection.
+Responsive Design: They adapt to various screen sizes and orientations, ensuring a consistent experience on desktops, tablets, and smartphones.
+App-Like Interaction: PWAs offer a native app-like feel with smooth transitions, interactions, and the ability to be added to the user's home screen.
+Push Notifications: They can deliver timely updates and notifications to users. As of 2026, push notification support has expanded significantly, including on iOS (from iOS 16.4 onwards, for installed PWAs)
+Secure and Reliable: PWAs are served over HTTPS, ensuring data security and integrity.
+PWAs are now a well-established choice for modern web development, particularly well-suited for content-driven apps, e-commerce, SaaS, and service-based products.
+
+Note: While PWAs offer numerous benefits, they also face several challenges and limitations:
+
+Platform Capability Gap: Android (Chrome) leads PWA support with a capability score of approximately 97/100, while iOS (Safari) scores around 86/100 in 2026. Features such as background sync, Web Bluetooth, Web NFC, and silent push notifications remain unsupported on iOS.
+iOS-Specific Constraints: iOS PWAs still lack automatic install prompts, and cached data can be cleared after 7 days of inactivity. Push notifications on iOS are only available for PWAs that have been added to the home screen. Additionally, since iOS 17.4, users in the EU no longer receive standalone PWA support due to Apple's response to the Digital Markets Act — PWAs in EU countries open in Safari tabs without push support.
+App Store Presence: On Android, PWAs can be published to Google Play via Trusted Web Activity (TWA). On the Apple App Store, submission is technically possible using a WebView wrapper, but Apple frequently rejects these submissions if they don't provide significant native functionality beyond the website.
+Limited Device Access: Compared to native apps, PWAs still have restricted access to certain device APIs, particularly on iOS.
+Performance Variability: Performance depends on optimisation and caching strategies, and can vary across devices and network conditions.
+User Adoption: Users may be unfamiliar with installing PWAs, particularly given the absence of automatic install prompts on iOS.
+Ongoing Maintenance: PWAs require regular updates to remain compatible with evolving web standards and to address security concerns.
+Despite these challenges, especially the ongoing iOS friction, PWAs remain a compelling and cost-effective alternative to native apps for many use cases, provided their platform limitations are understood and planned for.
+
+Videos:
+Introduction to PWAs [1 of 17] | PWA for Beginners:
+
+
+
+Progressive Web Apps in 2024:
+
+
+Activities
+Now that you understand the principles of the grid system and how different breakpoints are defined for various devices, it’s time to apply this knowledge to design your own website.
+
+Utilise the grid system to create a structured and responsive layout for your website.
+Define and apply breakpoints to ensure that your design adapts seamlessly across different screen sizes.
+Check your design on multiple devices to confirm that it adjusts correctly to various resolutions and orientations.
+This hands-on practice will help you apply what you've learned and create a well-organised, responsive website.
+
+Resources
+PWA vs. Native Apps in 2026: Comparison, and a Real-World Case Study: https://webscraft.org/blog/pwa-chi-nativniy-dodatok-u-2026-porivnyannya-stsenariyi-viboru-ta-realniy-keys?lang=en
+PWA iOS Limitations and Safari Support [2026]: https://www.magicbell.com/blog/pwa-ios-limitations-safari-support-complete-guide
+A Quick Guide to Responsive Design: https://uxtricks.design/blogs/ux-design/responsive-design/
+Defining Breakpoints: https://responsivedesign.is/strategy/page-layout/defining-breakpoints/
+Responsive Design Breakpoints: https://1stwebdesigner.com/responsive-design-breakpoints/

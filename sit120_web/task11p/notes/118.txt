@@ -1,0 +1,44 @@
+1.18  Navigation and Header Layout
+Learning Goals
+By the end of this topic, you should be able to:
+
+Understand the use of the navigation bar.
+Comprehend the layout of the header.
+What is a navigation bar?
+What is a Navigation Bar?
+
+When your website includes a lot of content, it’s impractical to place everything on a single page. Designing a navigation bar in the header layout helps users easily access different sections of your site.
+
+For example:
+
+Horizontal Navigation Bar
+This is a common method for allowing users to navigate between different pages or sections of content on your website.
+
+
+Image Source: https://blavity.com/
+Dropdown Navigation Menu
+When you have multiple content pages within the same hierarchy, you can organise subitems under a parent item in the navigation menu. This allows users to access related pages or sections more efficiently by expanding the parent item to reveal the subitems.
+
+
+Image Source: https://gestion.pe/
+Hamburger Navigation Menu
+On smaller devices, there may not be enough space to display all navigation bar items. The hamburger navigation menu is a popular solution for this. It uses a compact icon (typically three horizontal lines) to open a menu that reveals all the navigation items when clicked or tapped.
+
+
+Image Source: https://en.wikipedia.org/wiki/Hamburger_button
+Vertical Sidebar Navigation Menu
+This is an alternative method for displaying navigation options, allowing users to navigate through different sections of content. A vertical sidebar menu is typically positioned on the side of the page, offering a space-efficient way to organise and access various navigation items.
+
+
+Image Source: https://www.behance.net/gallery/66772111/Maintenance-Page-Marvel-WordPress-Theme/modules/390625195
+Footer Navigation Menu
+When users don’t find important links in the header, they often look for additional options at the bottom of the page. A footer navigation menu provides a convenient place to include links to important pages or sections that users might need as they reach the end of your website.
+
+
+Image Source: https://www.raywenderlich.com/
+Activities
+Start by creating your own navigation bar and view how it appears in a browser. This will help you understand its layout and functionality in a real-world context.
+
+Resources
+Vertical vs Horizontal Navigation in UI/UX Design:  https://www.uinkits.com/blog-post/vertical-vs-horizontal-navigation-in-ui-ux-design
+Top vs Left Website Navigation: Unravelling the Pros and Cons from a Tech Users Perspective: https://bootcamp.uxdesign.cc/top-vs-left-navigation-unraveling-the-pros-and-cons-from-a-b2b-website-for-tech-users-perspective-8681d932843a

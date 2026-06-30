@@ -1,0 +1,25 @@
+1.11 Sketch Your Ideas
+Learning Goals
+By the end of this topic, you should be able to:
+
+Sketch your product ideas effectively.
+What does Sketch mean?
+Sketching refers to the process of quickly generating ideas through rough drawings or outlines. It's a fast way to visualise concepts and explore different design possibilities before moving on to more detailed work.
+
+Why sketching and drawing are super-important skills for every UX designer
+Image Source: https://agentestudio.com/blog/how-to-wireframe-an-app
+Sketching allows you to quickly articulate and communicate your thoughts and ideas by getting them out of your head and onto paper for validation. If you jump straight into development or design without sketching, you may end up wasting time fixing or reworking concepts. By sketching your ideas first, it's easier to share and discuss them with your team, which can save a lot of time and effort in the long run, making it more efficient for the business.
+
+Videos:
+UX Design Course: How to Create Great Sketches for Beginners | Free UX course (Lesson 18)
+
+
+
+How to Ideate using Crazy 8? (Day 3)
+
+
+
+Resources
+Grab a pen and start sketching your ideas.
+Share your sketches with others to gather feedback.
+Use the feedback to decide whether your ideas are strong or need improvement.

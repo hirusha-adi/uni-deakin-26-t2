@@ -1,0 +1,45 @@
+1.10 User Interface Design
+Learning Goals
+By the end of this topic, you should be able to:
+
+Understand User Interface
+What is User Interface?
+User Interface (UI) design focuses on creating the visual elements and interactive components of a product. It involves designing everything a user interacts with, including:
+
+Input Controls: Elements such as buttons, text fields, and checkboxes that allow users to provide input. Among these, call-to-action (CTA) buttons are especially important, as they guide users toward key actions such as “Sign Up,” “Learn More,” or “Buy Now.” A well-designed CTA can significantly influence user decisions and overall engagement.
+
+
+Image Source: https://www.drip.com/blog/call-to-action-examples
+Navigation Components: Menus, tabs, and links that help users navigate through the application or website.
+Sharing Options: Features that enable users to share content or interact with others.
+Information Displays: Elements such as labels, notifications, and data presentations that convey information to users.
+Why is UI Design Important?
+
+UI design is crucial because it directly affects how users interact with and perceive a product.
+A well-designed UI:
+
+Enhances Usability: Makes it easier for users to accomplish their goals efficiently and effectively.
+Improves User Experience: Provides a pleasant and intuitive experience, reducing frustration and increasing satisfaction.
+Builds Trust and Credibility: A clean, consistent, and professional design can create a positive impression and encourage users to trust and engage with the product.
+Increases Accessibility: Ensures that the product is usable by people with various abilities and disabilities.
+On a website, UI elements may include:
+
+Screens: The layout and design of different pages or views.
+Icons: Visual symbols that represent actions, content, or features.
+UI Design Guides: Guidelines that ensure consistency and a common visual language across the team, helping to maintain a cohesive look and feel.
+UI_ABNB
+Image Source: https://www.airbnb.com.au/
+Video:
+The 4 Most Important Laws of UX Design
+
+
+
+UI Design basic
+
+
+
+Activities
+Explore design styles for your product, focusing on elements like icons, colour palettes, and screen layouts.
+Implement your chosen colour palette, establish the basic structure, and apply the font and hierarchy you plan to use.
+Resources:
+25 Excellent Call to Action Examples (That'll Earn You More Clicks): https://www.drip.com/blog/call-to-action-examples

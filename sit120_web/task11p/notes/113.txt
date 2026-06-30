@@ -1,0 +1,28 @@
+1.13 Wireframes
+Learning Goals
+By the end of this topic, you should be able to:
+
+Create wireframes for your product.
+Understand the purpose and components of wireframes
+What is a wireframe?
+A wireframe is a blueprint for your product that outlines its structure and layout. It serves as a visual guide to communicate the overall design and functionality, helping stakeholders understand the general concepts and structure before development begins.
+
+Purpose of Wireframes:
+Planning and Refinement: Wireframes allow you to plan and refine the design of your application, ensuring that essential elements are properly organised and that the layout supports the intended functionality.
+Visual Communication: They provide a clear visual representation of the user interface, helping team members and stakeholders understand the design direction and layout.
+Types of Wireframes:
+Low-Fidelity Wireframes: Basic, simple representations of the layout and structure. These are often used early in the design process to explore different concepts quickly.
+Mid-Fidelity Wireframes: More detailed than low-fidelity wireframes, including more accurate placement of elements and interactions. Useful for refining the design and getting feedback on specific features.
+High-Fidelity Wireframes: Detailed and close to the final design, including precise spacing, typography, and often some interactivity. These are used to finalise the design and provide a clearer idea of the end product.
+Below is an image illustrating the difference between Low-Fidelity, Mid-Fidelity, and High-Fidelity Wireframes:
+
+Difference between Low Fidelity and High Fidelity Wireframes
+Image Source: https://mockitt.wondershare.com/wireframe/low-fidelity-wireframes.html
+Example:
+https://8u4sia.axshare.com/#id=ygcexu&p=login
+
+Melbourne Music Festival by Ting Chieh Lin
+
+Activities
+Use any wireframe tool to develop an initial structure for your product. Focus on outlining the basic layout and functionality without adding too many details or styling.
+Quickly present your wireframe to showcase your ideas about the website's structure and layout.

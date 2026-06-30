@@ -1,0 +1,74 @@
+1.7 Research Methods and Analysis of Your Target Users
+Learning Goals
+By the end of this topic you should be able to:
+
+Use methods to identify your target audiences.
+Learn how to demonstrate creativity to assess the impact of your product.
+What are Research Methods?
+Once you have ideas and a product summary, the next step is to identify the needs for your improved product. Thus, you could take a number of measures:
+
+Surveys - Create a survey with basic questions to gather information from people.
+Questionnaires - A questionnaire is a survey that contains a series of questions to gather information from the respondents.
+Find your Target Users
+Understanding your target users is a critical step in the design process. It involves identifying who will use your product, what their needs are, and how they are likely to interact with your system. By clearly defining your target audience, you can design interfaces that are more relevant, intuitive, and effective.
+
+To find your target users, consider factors such as:
+
+Demographics: age, gender, education level, occupation
+Goals and needs: what users want to achieve
+Behaviours: how they interact with similar products
+Challenges (pain points): problems users are trying to solve
+One effective way to represent target users is through personas.
+
+What are Personas?
+Personas are fictional characters that represent different user types. They are based on research and real data, and they help designers better understand user needs, experiences, and behaviours.
+
+A persona typically includes:
+
+Name and background
+Goals and motivations
+Skills and experience level
+Frustrations or challenges
+Typical behaviours or usage patterns
+How to Create Personas
+Collect Data: Gather information from user research such as surveys, interviews, or analytics.
+Identify Patterns: Look for common characteristics, behaviours, and goals among users.
+Create Profiles: Develop 2–4 personas that represent your main user groups.
+Add Details: Give each persona a name, background story, and clear goals to make them realistic.
+Use Them in Design: Refer to these personas when making design decisions to ensure the product meets user needs.
+By using personas, designers can keep the user at the centre of the design process and create more user-focused and effective interfaces.
+
+
+Image Source: https://www.behance.net/gallery/109073449/User-Persona/modules/624819533
+Videos:
+
+UX Research Methods: The Basics You Need to Get Started
+
+
+
+UX Research: How to Avoid Survey Mistakes
+
+
+
+The UX Research Methods Every Designer Needs To Know
+
+
+
+UX Tea Break: How to create bulletproof survey questions
+
+
+
+For Example:
+
+Interview questions from Ting Chieh Lin.
+
+
+Interviewee's Answer from Weber.
+
+Activities
+Create a list of questions for the survey and ask them to your target users.
+Develop user personas based on user research to help identify user needs.
+Resources
+A step-by-step guide to creating an effective user research survey | Sarah Doody, UX Designer: https://www.youtube.com/watch?v=exyHMFVrZCg
+Putting Personas to Work in UX Design: What They Are and Why They’re Important: https://xd.adobe.com/ideas/process/user-research/putting-personas-to-work-in-ux-design/
+Research methods: https://www.alzheimer-europe.org/Research/Understanding-dementia-research/Types-of-research/Research-methods

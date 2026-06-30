@@ -1,0 +1,37 @@
+1.12 Prototyping
+Learning Goals
+By the end of this topic, you should be able to:
+
+Understand what a prototype is.
+Learn how to use tools such as Adobe XD or Figma for prototyping.
+What is a Prototype?
+A prototype is a tangible representation of your design that allows you to visualise how users will interact with your screens and navigate through your product. Turning your sketches into prototypes offers several benefits:
+
+User Interaction: Observe how users interact with your design and navigate through your product. This helps in understanding usability and the effectiveness of your design.
+Testing and Feedback: Conduct tests to identify missing actions or areas for improvement based on feedback from users and testers.
+To create a prototype, start with your wireframes or sketches and use design tools such as Adobe XD or Figma to develop interactive versions of your design.
+
+
+
+
+The final step is to connect screens using interactive hotspots to create a functional prototype.
+
+Videos:
+Free Figma Tutorial: Designing Wireframes with Figma:
+
+
+
+Figma Tutorial for Beginners (2024): Website Design:
+
+
+
+Free Adobe XD Tutorial 2023 for Beginners - Your Quick Start Guide:
+
+Free Adobe XD Tutorial 2023 for Beginners - Your Quick Start Guide
+Free Adobe XD Tutorial 2023 for Beginners - Your Quick Start Guide
+Activities
+Use Figma or Adobe XD to turn your sketches into a functional web app. Apply your design and prototyping skills to create a working model.
+Take screenshots of your web app and share them with friends or colleagues to get feedback and suggestions for improvement.
+Resources
+Free Figma Tutorial: Designing Wireframes with Figma: https://youtube.com/watch?v=6t_dYhXyYjI
+Free Adobe XD Tutorial 2023 for Beginners - Your Quick Start Guide: https://www.youtube.com/watch?v=HMbj5B_QrYQ&t=646s

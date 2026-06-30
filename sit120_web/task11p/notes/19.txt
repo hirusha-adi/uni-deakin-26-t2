@@ -1,0 +1,46 @@
+1.9 User Experience Design
+Learning Goals
+By the end of this topic, you should be able to:
+
+Understand the importance of user experience
+Learn how UX can improve your project
+Apply user experience methodologies
+What is user experience?
+User Experience is how your product is used by your users. Does your product solve their problems? And do they use your product effectively? Everything is related to user experience.
+
+What methods can I use for user experience?
+
+Image Source: https://www.nngroup.com/articles/ux-research-cheat-sheet/
+Discover: Search for information on the Internet or in books to gather general information.
+Explore: Conduct research and surveys on your competitors, and analyse the pros and cons of your products.
+Test: Test your prototype with users.
+Listen and Validate: Collect feedback from your testers to improve your UX and the workflow of the product.
+Videos:
+Become a UI/UX designer in 2024 - A step by step guide
+
+
+
+Become a UX Designer in 2024 - A Step by Step Guide!
+
+
+
+UX Method
+
+
+
+Get Started
+
+
+
+Activities
+Describe any experience you have had. For example, when you went shopping or bought a coffee.
+
+Were there any aspects that made you feel uncomfortable or unhappy?
+Do you have any ideas on how to improve the experience?
+Resources
+UX Design: https://www.interaction-design.org/literature/topics/ux-design
+10 UX Best Practices for Optimal User Experience in 2024: https://www.windmill.digital/ten-ux-best-practices-for-optimal-user-experience-in-2024/
+The top UX design trends in 2024 (and what they mean for UX designers): https://www.uxdesigninstitute.com/blog/the-top-ux-design-trends-in-2024/
+Mobile UX Design: The Ultimate Guide 2024: https://uxcam.com/blog/mobile-ux/
+Mobile app UX design 101: Tips for success: https://www.adjust.com/blog/mobile-app-ux-design-101-tips-for-success/
+UX Research Cheat Sheet: https://www.nngroup.com/articles/ux-research-cheat-sheet/

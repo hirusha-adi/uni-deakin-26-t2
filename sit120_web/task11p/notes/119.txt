@@ -1,0 +1,29 @@
+1.19 Web system
+Learning Goals
+By the end of this topic you should be able to:
+
+Understanding of Web System
+What is the web system?
+Web Systems covers the full stack of modern web development:
+
+Front-End: HTML5, CSS3, JavaScript (ES6+), responsive design, accessibility, React/Vue/Angular
+Back-End: Node.js/Express or Python, REST/GraphQL APIs, authentication, MVC, microservices
+Databases: SQL (MySQL/PostgreSQL) and NoSQL (MongoDB), database design, ORM tools
+Security: SQL injection, XSS, CSRF, authentication security, encryption, HTTPS
+Testing: Unit/integration testing, CI/CD pipelines, automated testing tools
+DevOps & Deployment: Git/GitHub, cloud hosting (AWS/Netlify/Vercel), Docker, monitoring
+Modern Web: SEO & AI search, performance (Core Web Vitals), PWAs, WebSockets, ethics & privacy
+Basic Web Application Architecture
+The below image illustrates a basic web application architecture, showing how the frontend and backend interact. The frontend is the part users see and interact with (built with HTML, CSS, and JavaScript), where data is collected and results are displayed. It sends requests to the backend, which contains the application logic (using languages like Python, Java, or PHP). The backend processes these requests through a web server, interacts with the file system and database, and then sends a response back to the frontend.
+
+
+
+Image Source: https://www.esparkinfo.com/web-development/application/architecture
+Video:
+Web Systems Architecture
+
+https://www.coursera.org/lecture/service-oriented-architecture/4-1-4-web-systems-architecture-enLfh
+
+Resources
+Find any web page and analyse how the website was created.
+How do they communicate with each other from back-end to front-end?

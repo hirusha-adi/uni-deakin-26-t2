@@ -1,0 +1,120 @@
+1.5 Website Design Principles and Guidelines
+Learning Goals
+By the end of this topic. you should be able to:
+
+Understand web design principles
+Learn key terms related to web design
+Understanding Web Design principles
+A user-friendly website design should account for how your target users interact with your site and whether it effectively solves their problems.
+
+A good website contains the following elements:
+
+Target Audience: Design with the needs and behaviours of your target users in mind.
+Design Elements: Include visual elements such as colour, typography, and imagery.
+Hierarchy: Organise content in a way that guides users’ attention to the most important information first.
+Layout: Arrange elements on the page to create a clear and intuitive structure.
+Navigation: Ensure users can easily find their way around the site.
+Performance (Loading Time): Optimise loading times to provide a smooth and efficient user experience.
+Different Devices: Design responsively to ensure the site works well across various devices and screen sizes.
+Colour in Web Design
+
+
+Colour is one of the most immediate and influential tools in a designer’s toolkit. It plays a critical role in shaping first impressions, guiding user attention, reinforcing brand identity, and ensuring accessibility. When used thoughtfully, colour enhances both the aesthetics and usability of a digital product.
+
+Key Principles
+1. Colour Psychology
+Colours are often associated with particular emotions and perceptions. For example, blue is commonly linked to trust and calmness, making it popular in finance and technology, while red can signal urgency or energy, and green is frequently associated with growth or sustainability. However, these associations are not universal—cultural context and audience expectations should always be considered when making colour choices.
+
+2. Contrast and Accessibility
+Effective colour use must prioritise readability and inclusivity. Sufficient contrast between text and background is essential for users with visual impairments. The Web Content Accessibility Guidelines (WCAG) recommend a minimum contrast ratio of 4.5:1 for standard text and 3:1 for larger text. Designers should also avoid relying solely on colour to convey meaning, ensuring content remains accessible to users with colour vision deficiencies.
+
+3. The 60–30–10 Rule
+A commonly used guideline for achieving visual balance is the 60–30–10 rule: 60% dominant colour (typically backgrounds), 30% secondary colour (such as sections or components), and 10% accent colour (used for calls to action or highlights). While helpful, this rule is flexible and should be adapted to suit the needs of the design rather than followed rigidly.
+
+4. Consistency
+Maintaining a consistent colour palette across a website or application helps create a cohesive and professional user experience. Consistency supports brand recognition and improves usability by establishing clear visual patterns and expectations.
+
+5. Designing for Dark Mode
+With the growing popularity of dark mode, designers must consider how colour palettes translate across both light and dark themes. This includes adjusting contrast, avoiding overly saturated colours on dark backgrounds, and ensuring readability in all viewing conditions.
+
+Conclusion
+Colour is far more than a decorative element—it is a functional component of design that influences how users perceive, navigate, and interact with digital interfaces. By applying these principles with flexibility and awareness, designers can create experiences that are both visually compelling and accessible to a wide range of users.
+
+Typography in Web Design
+Typography defines how text looks and feels within a digital interface. It plays a vital role in readability, establishes tone, and influences how users perceive credibility and trust. Even well-structured designs can be undermined by poor typographic choices, making typography a fundamental component of effective web design.
+
+Key Principles
+1. Font Pairing
+Most web interfaces rely on a combination of typefaces to create contrast and clarity. A common approach is to use one font for headings—often a display or serif typeface—and another for body text, typically a clean sans-serif for optimal readability. To maintain visual coherence, it is best to limit usage to two font families, and rarely more than three.
+
+2. Hierarchy Through Type
+Typography is essential for establishing a clear visual hierarchy. Variations in size, weight, and style help users quickly understand the structure of content. Headings (H1, H2, H3) should be clearly distinguishable from body text, guiding users as they scan and navigate the page.
+
+3. Readability and Legibility
+Body text is generally most readable between 16px and 18px, depending on the typeface and context. Adequate line spacing (typically around 1.5) improves legibility, while controlling line length—ideally between 60 and 80 characters per line—prevents visual fatigue and enhances comprehension.
+
+4. Web Fonts and Performance
+Modern web design often uses custom web fonts, commonly delivered through services such as Google Fonts, which provide a wide range of typographic options. However, loading too many font families or weights can negatively impact performance. Designers should prioritise efficiency by limiting font usage and only loading the styles required.
+
+5. Accessibility Considerations
+Accessible typography ensures content is usable by a wide range of users. Text should never be embedded in images where it cannot be resized or read by assistive technologies. Sufficient contrast between text and background is essential, and designers should avoid relying solely on stylistic choices such as italics or very light font weights to convey important information.
+
+Conclusion
+Typography is more than a visual detail—it is a key driver of communication and usability in web design. By applying typographic principles thoughtfully and consistently, designers can create interfaces that are both engaging and accessible, enhancing the overall user experience.
+
+Graphics and Imagery in Web Design
+Visual content—including illustrations, icons, photographs, and graphics—plays a central role in how users perceive and interact with a website. When used effectively, imagery can reinforce messaging, guide attention, and enhance user engagement. When misused, it can create visual clutter, reduce clarity, and negatively impact performance.
+
+Key Principles
+1. Purpose and Relevance
+Every visual element should serve a clear purpose. Images should support content by illustrating concepts, reinforcing messages, or directing user focus. Decorative or generic stock imagery that does not add meaning can dilute the overall effectiveness of a design.
+
+2. File Formats and Performance
+Choosing the appropriate file format is essential for balancing quality and performance. Modern formats such as WebP and AVIF provide significantly smaller file sizes compared to traditional formats like JPEG and PNG, often with comparable visual quality. Scalable Vector Graphics (SVG) are ideal for icons, logos, and illustrations, as they remain sharp at any resolution. For simple shapes or decorative elements, CSS can often replace image files entirely, reducing page load time.
+
+3. Accessibility and Alt Text
+Accessible design requires that meaningful images include descriptive alternative text. Alt text ensures that users relying on assistive technologies can understand visual content, while also contributing to search engine optimisation. Images that are purely decorative should be marked appropriately so they can be ignored by screen readers.
+
+4. Consistency of Visual Style
+Maintaining a consistent visual style is key to creating a cohesive user experience. Mixing different illustration styles, icon sets, or photographic treatments can make a design feel disjointed. A unified approach to imagery strengthens brand identity and improves overall clarity.
+
+5. Responsive Images
+Websites must adapt to a wide range of devices and screen sizes. Responsive image techniques—such as using srcset and sizes attributes or CSS-based solutions—allow designers to serve appropriately sized images based on the user’s device. This prevents unnecessary data usage, such as loading large, high-resolution images on small mobile screens, and improves performance.
+
+Conclusion
+Graphics and imagery are powerful tools for communication in web design, but they must be used with intention. By prioritising relevance, performance, accessibility, and consistency, designers can create visually engaging experiences that remain efficient and user-friendly across all devices.
+
+Example:
+
+This is an example of branding, including colours, typefaces, and graphics:
+
+
+Image Source: https://www.heroinesinc.org/
+Videos:
+The 5 Design Principles (But in Web Design)
+
+
+
+The Top 3 Web Design Principles That You Should Know
+
+
+
+Design Principle:
+
+
+
+Activities
+See any website examples and investigate its colours, typography, imagery, and layout. Analysis of potential problems you might find better ways to design a friendly experience.
+
+Resources
+•  8 Principles of Good Website Design
+
+    https://wpastra.com/good-website-design/
+
+•  20 web design principles to follow
+
+    https://www.canva.com/learn/20-web-design-principles-follow/
+
+•  Web Design Example
+
+    https://www.crazyegg.com/blog/homepage-design/

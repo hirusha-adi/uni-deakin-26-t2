@@ -1,0 +1,19 @@
+1.4 SIT120 Introduction to Project Design and Implementation
+Learning Goals
+By the end of this topic, you should be able to:
+
+Understand web design principles
+Apply research methods to identify your target audience
+Learn UX/UI design for the web
+Use prototype tools to gather feedback
+Create sketches and wireframes for your ideas
+Understand the foundations of responsive design
+Comprehend workflow and performance
+Navigate different pages effectively
+What we will cover:
+For this week, we will explore the foundations of website design. There are many elements involved in designing a website. Design methods can help you identify user problems and create better products. We will also cover prototype tools such as Figma and Adobe XD to validate your product ideas and gather user feedback.
+
+Time required: You can complete this week content entirely online. Please set aside approximately 8 hours to go through the module in its entirety.
+
+Activities
+You are encouraged to learn by doing, as this approach will benefit both your product proposal and the implementation of your OnTrack tasks.
