@@ -4,10 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task 3.1P</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
     <h1>Hirusha Adikari</h1>
     <hr>
+
+    <p>
+        <a href="#university">Go to University Section</a> |
+        <a href="#images">Go to Images Section</a>
+    </p>
 
     <h2>Contact Details</h2>
     <p>
@@ -31,7 +41,7 @@
     </p>
     <hr>
 
-    <h2>University</h2>
+    <h2 id="university">University</h2>
     <h3>My Units</h3>
 
     <p>
@@ -63,6 +73,40 @@
     <p>
         On Fridays, between 1400 to 1550, I have a workshop for SIT120. <br>
         On Fridays, between 1700 to 1900, I have the weekly DUCA event. <br>
+    </p>
+    <hr>
+
+    <h2 id="images">Images and Hyperlinks</h2>
+
+    <h3>Three Images With Same Size</h3>
+    <img src="img1.jpg" alt="First theme image" width="250" height="180">
+    <img src="img2.jpg" alt="Second theme image" width="250" height="180">
+    <img src="img3.jpg" alt="Third theme image" width="250" height="180">
+
+    <h3>Same Image in Three Different Sizes</h3>
+    <p>Large:</p>
+    <img src="img1.jpg" alt="large version of image one" width="400">
+    <p>Medium:</p>
+    <img src="img1.jpg" alt="medium version of image one" width="250">
+    <p>Small:</p>
+    <img src="img1.jpg" alt="small version of image one" width="120">
+
+    <h3>Relative Hyperlink to an Image</h3>
+    <p>
+        Click here to open 
+        <a href="img2.jpg">my second image</a>.
+    </p>
+
+    <h3>Image Hyperlink</h3>
+    <p>Click the image below to visit my personal website. Contact me at <a href="mailto:hello@hirusha.xyz">hello@hirusha.xyz</a> </p>
+    <a href="https://hirusha.xyz/" target="_blank">
+        <img src="img3.jpg" alt="Image linking to Deakin University" width="250">
+    </a>
+
+    <hr>
+    <p>
+        <a href="#">Back to Top</a> |
+        <a href="#university">Back to University Section</a>
     </p>
 
 </body>
