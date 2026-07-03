@@ -4,31 +4,37 @@
     <title>Icecream Sales Tables</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        table {
-            border-collapse: collapse;
-            margin-bottom: 25px;
-        }
-
         caption {
             text-align: left;
             font-style: italic;
             margin-bottom: 10px;
         }
 
+        /* 
+            https://www.w3schools.com/css/css_table.asp
+            https://www.w3schools.com/cssref/pr_border-collapse.php
+         */
+        table {
+            border-collapse: collapse;
+            margin-bottom: 25px;
+        }
+
         th, td {
             border-width: 1px;
             border-style: solid;
             border-color: black;
-            padding: 4px 6px;
+
+            padding-top: 4px;
+            padding-bottom: 4px;
+            padding-right: 6px;
+            padding-left: 6px;
+            
             text-align: left;
         }
 
-        th {
-            font-weight: bold;
+        
+        .font-normal {
+            font-weight: normal !important;
         }
     </style>
 </head>
@@ -39,14 +45,14 @@
 
         <tr>
             <th></th>
-            <th>NSW</th>
-            <th>VIC</th>
-            <th>QLD</th>
-            <th>WA</th>
-            <th>SA</th>
-            <th>TAS</th>
-            <th>ACT</th>
-            <th>NT</th>
+            <th class="font-bold">NSW</th>
+            <th class="font-bold">VIC</th>
+            <th class="font-bold">QLD</th>
+            <th class="font-bold">WA</th>
+            <th class="font-bold">SA</th>
+            <th class="font-bold">TAS</th>
+            <th class="font-bold">ACT</th>
+            <th class="font-bold">NT</th>
         </tr>
 
         <tr>
@@ -78,7 +84,7 @@
         <caption>Table 2: Australian Icecream Sales by Season</caption>
 
         <tr>
-            <th rowspan="2">Season</th>
+            <th rowspan="2" class="font-normal">Season</th>
             <th colspan="3">Summer</th>
             <th colspan="3">Autumn</th>
             <th colspan="3">Winter</th>
