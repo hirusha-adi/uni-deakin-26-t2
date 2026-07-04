@@ -1,0 +1,65 @@
+.box {
+    background-color: #b2c6e6; /* https://imagecolorpicker.com*/
+    border: 2px solid black;
+    color: white;
+
+    /* flex justify-center items-center tracking-widest */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.1em; /* https://tailwindcss.com/docs/letter-spacing */
+}
+
+body {
+    margin: 0;
+    padding: 16px;
+    background-color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    height: 100px;
+    font-size: 36px;
+    margin-bottom: 14px;
+}
+
+nav {
+    height: 50px;
+    font-size: 24px;
+    margin-bottom: 14px;
+}
+
+main {
+    display: grid;
+    /* 
+        https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Values_and_units/Numeric_data_types#flex_units
+        https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/grid-template-columns
+    */
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.content-one, .main-content, .content-two {
+    height: 180px;
+    font-size: 32px;
+}
+
+footer {
+    height: 50px;
+    font-size: 24px;
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+
+    .content-one, .main-content, .content-two {
+        height: 420px;
+    }
+}

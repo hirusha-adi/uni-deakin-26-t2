@@ -5,55 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task 3.4D</title>
     
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .box {
-            background-color: #b2c6e6; /* https://imagecolorpicker.com*/
-            border: 2px solid black;
-            color: white;
-
-            /* flex justify-center items-center tracking-widest */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            letter-spacing: 0.1em; /* https://tailwindcss.com/docs/letter-spacing */
-        }
-    </style>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-
-<body class="m-0 p-4 bg-white">
-
-    <div class="max-w-7xl mx-auto space-y-4">
-
-        <header class="box h-28 text-4xl">
+<body>
+    <!-- 
+        Tailwind CSS
+        ------------
+    -->
+    <!-- 
+    <body class="m-0 p-4 bg-white"> 
+        <div class="max-w-7xl mx-auto space-y-4">
+            <header class="box h-28 text-4xl">
+                Header
+            </header>
+            <nav class="box h-16 text-2xl">
+                Navigation Menu
+            </nav>
+            <main class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                <section class="box h-48 md:h-[420px] text-3xl">
+                    Content 1
+                </section>
+                <section class="box h-48 md:h-[420px] text-4xl md:col-span-3">
+                    Main Content
+                </section>
+                <aside class="box h-48 md:h-[420px] text-3xl">
+                    Content 2
+                </aside>
+            </main>
+            <footer class="box h-16 text-2xl">
+                Footer
+            </footer>
+        </div> 
+    -->
+    
+    <!-- 
+        Vanilla CSS
+        -----------
+    -->
+    <div class="container">
+        <header class="box">
             Header
         </header>
-
-        <nav class="box h-16 text-2xl">
+        <nav class="box">
             Navigation Menu
         </nav>
-
-        <main class="grid grid-cols-1 md:grid-cols-[1fr_3fr_1fr] gap-4">
-
-            <section class="box h-48 md:h-[420px] text-3xl">
+        <main>
+            <section class="box content-one">
                 Content 1
             </section>
-
-            <section class="box h-48 md:h-[420px] text-4xl">
+            <section class="box main-content">
                 Main Content
             </section>
-
-            <aside class="box h-48 md:h-[420px] text-3xl">
+            <aside class="box content-two">
                 Content 2
             </aside>
-
         </main>
-
-        <footer class="box h-16 text-2xl">
+        <footer class="box">
             Footer
         </footer>
-
     </div>
-
 </body>
 </html>

@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- You will need to create this new JS file and place it in
+    the same directory as this HTML file (i.e., public_html) -->
+    <script src="icecreamRatings.js"></script>
+
+    <title>Ice Cream Ratings Page</title>
+
+    <style>
+        /* ── Reset & base ── */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #212529;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* ── Header ── */
+        header {
+            background-color: #cff4fc; /* equivalent to bg-info-subtle */
+            margin-bottom: 1.5rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .header-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0.5rem;
+            width: 100%;
+            max-width: 66.66%; /* equivalent to col-sm-8 */
+            margin: 0 auto;
+        }
+
+        .header-inner h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-inner p {
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+
+        /* ── Main content ── */
+        main {
+            flex: 1; /* pushes footer to bottom */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        main h3 {
+            margin-bottom: 0.75rem;
+        }
+
+        main p {
+            margin-bottom: 1rem;
+        }
+
+        /* ── Input fields section — CSS Grid (replaces Bootstrap row/col) ── */
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* equivalent to two col-6 columns */
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .form-group label {
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            border: 1px solid #ced4da;
+            border-radius: 0.375rem;
+            color: #212529;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #86b7fe;
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        }
+
+        /* ── Ratings output section ── */
+        .ratings-wrapper {
+            display: grid;
+            grid-template-columns: 10fr 2fr; /* equivalent to col-10 mx-auto */
+            margin-top: 1.5rem;
+        }
+
+        .ratings-box {
+            grid-column: 1 / 2;
+            background-color: #cff4fc; /* equivalent to bg-info-subtle */
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+        }
+
+        .ratings-box p {
+            margin-bottom: 0.5rem;
+        }
+        /* ── Ratings list indentation ── */
+        .ratings-box ul {
+            padding-left: 1.5rem; /* restores bullet indentation */
+            margin-bottom: 0.5rem;
+        }
+
+        .ratings-box ul li {
+            margin-bottom: 0.25rem;
+        }
+        /* ── Button ── */
+        .btn-primary {
+            display: inline-block;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            color: #fff;
+            background-color: #0d6efd;
+            border: 1px solid #0d6efd;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+            border-color: #0a58ca;
+        }
+
+        /* ── Footer ── */
+        footer {
+            background-color: #212529;
+            color: #fff;
+            text-align: center;
+            margin-top: 1.5rem;
+            padding: 0.5rem 1rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* ── Media query: narrow screens ── */
+        @media (max-width: 576px) {
+            .header-inner {
+                max-width: 100%;
+            }
+
+            .header-inner h1 {
+                font-size: 1.75rem;
+            }
+
+            .header-inner p {
+                font-size: 1rem;
+            }
+
+            /* Stack input fields on small screens */
+            .input-row {
+                grid-template-columns: 1fr;
+            }
+
+            /* Full width ratings box on small screens */
+            .ratings-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .ratings-box {
+                grid-column: 1 / 2;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-inner">
+            <h1>World of Ice Cream</h1>
+            <p>Provide your rating on your recent Ice Cream experience</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h3>Javascript Loops and Functions</h3>
+            <p>
+                A web pages can be a great way of getting feedback from users.
+                Here, we are asking the user for their name and a rating on
+                a recent <em>Ice Cream tasting experience</em> they have had.
+                After inputting their name, the use gives how many <em>stars</em>
+                out of <strong>5</strong> they would like to give. This is then
+                recorded and added to a list of previous results.
+            </p>
+            <p>
+                <strong>NOTE:</strong> The use should only be able to input a number between 0 and 5,
+                with an error being displayed if it is outside these bounds.
+            </p>
+
+            <h3>Input Fields</h3>
+
+            <div class="input-row">
+
+                <div class="form-group">
+                    <label for="nameInput">Name:</label>
+                    <input type="text" class="form-control" id="nameInput">
+                </div>
+
+                <div class="form-group">
+                    <label for="ratingInput">Star rating (between 0 and 5):</label>
+                    <input type="number" class="form-control" id="ratingInput"
+                        min="0" max="5">
+                </div>
+
+            </div>
+
+            <input class="btn-primary" type="button" onclick="submitRating()"
+                value="Submit a Ice Cream Rating">
+
+            <div class="ratings-wrapper">
+                <div class="ratings-box">
+                    <p>
+                        Ratings list last updated on <span id="last-updated-date">26/06/2026</span> at <span id="last-updated-time">10:26:19</span>:
+                    </p>
+
+                    <div id="ratings">
+                        <ul id="ratingsList">
+                            <li>
+                                [26/06/2026 10:26:19] <strong>M. Grey</strong> gave a rating of &#x2605;&#x2605;&#x2605;&#x2606;&#x2606;
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ice Cream made chilled!</p>
+    </footer>
+
+    <!-- Optional JavaScript -->
+
+</body>
+</html>
