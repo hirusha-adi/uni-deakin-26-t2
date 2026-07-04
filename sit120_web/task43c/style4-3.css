@@ -12,15 +12,17 @@ h1, h2, h3 {
 }
 
 h1 {
-    background-color: MediumSeaGreen;
     color: white;
     padding: 1.1rem;
     text-align: center;
     letter-spacing: 0.2em;
 
-    background-image: linear-gradient(to right, rgb(90, 150, 90), rgb(160, 204, 255), rgb(90, 150, 90));
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/background */
+    background-color: MediumSeaGreen;
+    background-image: url("img.jpeg");
     background-repeat: repeat-x;
     background-position: center;
+    background-size: auto 100%;
 }
 
 h2, h3 {
@@ -63,6 +65,7 @@ li {
     list-style-image: radial-gradient(red, white, green);
 }
 
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::first-letter */
 section p::first-letter {
     color: red;
     font-size: 1.5em;
