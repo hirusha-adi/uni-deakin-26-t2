@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="SIT774 Team">
+    <meta name="description" content="Template for structuring a html document">
+    <title>dKinSS</title>
+
+    <style>
+        html {
+            font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: rgb(241, 255, 179);
+        }
+
+        h1, h2, h3 {
+            font-family: Garamond, Georgia, serif;
+        }
+
+        h1 {
+            background-color: MediumSeaGreen;
+            color: white;
+            padding: 1.1rem;
+            text-align: center;
+        }
+
+        h2, h3 {
+            background-color: rgb(160, 204, 255);
+            color: rgb(51, 51, 51);
+            /* top right bottom left (shorthand, https://www.w3schools.com/css/css_padding.asp) */
+            padding: 0.3em 0.8em 0.3em 0.8em; 
+        }
+
+        nav {
+            margin: 1.5em;
+        }
+
+        section {
+            margin: 1.8em;
+        }
+
+        footer {
+            color: DarkRed;
+            font-size: 0.8rem;
+            font-style: italic;
+            text-align: center;
+            background-color: DarkSeaGreen;
+
+            /* 
+            this was not mentioned in the task sheet
+            but it's required to get an exactly identical look
+            */
+            padding-top: 0.1em;
+            padding-bottom: 0.1em;
+        }
+
+        .highlight {
+            background-color: LightPink;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1> dKin Software Systems</h1>
+    </header>
+    <nav>
+        <a href="home.html"> Home</a> &nbsp; &nbsp;
+        <a href="services.html"> Services</a> &nbsp; &nbsp;
+        <a href="contact.html"> Contact</a>
+    </nav>
+    <main>
+        <section>
+            <h3> Advanced Software Development </h3>
+            <p> dKin Software Systems is an experienced provider of reliable software
+                solutions to all of your complex computing needs. We have expertise
+                in fields ranging from web application development, high performance
+                scientific programming, artificial intelligence and cryptography.</p>
+            <p>
+                We pride ourselves on being:
+            </p>
+            <ul>
+                <li id="benefit1">Reliable</li>
+                <li id="benefit2">Experienced</li>
+                <li id="benefit3">Security Focused</li>
+                <li id="benefit4">Responsive</li>
+            </ul>
+
+        </section>
+
+        <section>
+            <h3> Your Needs are Our Priority </h3>
+            <p> The team at dKin Software Systems are dedicated to providing
+                <span class="highlight">solutions that meet all your needs</span>, 
+                in creative and innovative ways.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright &copy; 2026 dKin Software Systems Pty Ltd.</p>
+        <p>Please read our <a href="privacy.html">Privacy Policy</a>.</p>
+    </footer>
+</body>
+
+</html>
