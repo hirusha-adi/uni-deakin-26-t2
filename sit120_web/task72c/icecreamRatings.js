@@ -18,6 +18,7 @@ const submitRating = () => {
     const nameInput = document.getElementById("nameInput");
     const ratingInput = document.getElementById("ratingInput");
 
+    // validation
     const name = nameInput.value.trim();
     let rating = Number(ratingInput.value);
 
@@ -26,27 +27,25 @@ const submitRating = () => {
         rating = 5;
     }
 
+    // date/time
     const now = new Date();
     const date = now.toLocaleDateString();
     const time = now.toLocaleTimeString();
-
     document.getElementById("last-updated-date").textContent = date;
     document.getElementById("last-updated-time").textContent = time;
 
-    const listItem = document.createElement("li");
-
-    const dateText = document.createTextNode(`[${date} ${time}] `);
+    // name
     const strongName = document.createElement("strong");
     strongName.textContent = name || "Anonymous";
 
-    const ratingText = document.createTextNode(` gave a rating of ${makeStars(rating)}`);
+    // list item
+    const listItem = document.createElement("li");
+    listItem.append(`[${date} ${time}] `, strongName, ` gave a rating of ${makeStars(rating)}`);
 
-    listItem.appendChild(dateText);
-    listItem.appendChild(strongName);
-    listItem.appendChild(ratingText);
-
+    // add list item to list
     document.getElementById("ratingsList").appendChild(listItem);
 
+    // clear values out at the very end
     nameInput.value = "";
     ratingInput.value = "";
 };
