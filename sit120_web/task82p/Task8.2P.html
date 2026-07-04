@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- You will need to create this new JS file and place it in
     the same directory as this HTML file (i.e., public_html) -->
-    <script src="icecreamData.js"></script>
+    <script src="script.js"></script>
     <title>Ice Cream Ratings Page</title>
 
     <!-- Provided Styles -->
@@ -136,29 +136,31 @@
 
     <!-- Custom Styles -->
     <style>
-        /* https://www.w3schools.com/howto/howto_css_table_zebra.asp */
-        .table-wrapper {
-            overflow-x: auto;
+        h2 {
+            margin-bottom: 0.75rem;
         }
 
-        .icecream-table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 1rem 0;
+        code {
+            color: violet;
         }
 
-        .icecream-table th,
-        .icecream-table td {
-            text-align: left;
-            padding: 8px;
+        .button-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
         }
 
-        .icecream-table tbody tr:nth-child(odd) {
-            background-color: #f2f2f2;
+        #output {
+            padding: 0.2rem;
+            margin-top: 1rem;
         }
 
-        .icecream-stats {
-            margin-left: 1.5rem;
+        #output h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        #output ul {
+            margin-left: 2rem;
             margin-bottom: 1rem;
         }
     </style>
@@ -168,47 +170,33 @@
     <header>
         <div class="header-inner">
             <h1>World of Ice Cream</h1>
-            <p>Reporting on the Ice Cream Sales within Australia</p>
+            <p>Try your luck and win an Ice Cream...</p>
         </div>
     </header>
 
     <main>
         <div class="container">
-            <h3>Ice Cream Sales Report - Australia</h3>
+            <h2>Ice Cream Game</h2>
+
             <p>
-                Click the button below to build and display a list of the Ice Cream types and the sales records,
-                including which state had the greatest number sold. Following the table is some further informaiton
-                on the best and worst selling ice creams, with averages.
+                In this example we use the event handlers <code>onclick</code>,
+                <code>onmouseover</code> and <code>onmouseout</code> to change the
+                content and style of the page using DOM controls. Click the
+                `Click to Start` button to make things happen.
             </p>
 
-            <input class="btn-primary" type="button" onclick="buildIcecreamList()" value="Create Ice Cream Sales List">
-
-            <p style="margin-top: 1rem;">The following table has been dyanmically generated from JSON data:</p>
-
-            <div id="top_icecreams">
-                <table class="icecream-table">
-                    <thead>
-                        <tr>
-                            <th>Ice Cream Name</th>
-                            <th>Best State</th>
-                            <th>Total Sold</th>
-                            <th>Sales Category</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colspan="4" style="text-align: center;">Data has not been loaded yet.</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="button-wrapper">
+                <input class="btn-primary" type="button" id="btn-start" value="Click to Start"
+                    onclick="buttonClicked()">
             </div>
+
+            <div id="output" onmouseover="changeBackground()" onmouseout="resetBackground()"></div>
         </div>
     </main>
 
     <footer>
         <p>&copy; 2024 Ice Cream made chilled!</p>
     </footer>
-    <!-- Optional JavaScript -->
 </body>
 
 </html>
