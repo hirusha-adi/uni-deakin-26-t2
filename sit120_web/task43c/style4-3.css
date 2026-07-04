@@ -17,6 +17,10 @@ h1 {
     padding: 1.1rem;
     text-align: center;
     letter-spacing: 0.2em;
+
+    background-image: linear-gradient(to right, rgb(90, 150, 90), rgb(160, 204, 255), rgb(90, 150, 90));
+    background-repeat: repeat-x;
+    background-position: center;
 }
 
 h2, h3 {
@@ -30,10 +34,40 @@ nav {
     margin: 1.5em;
     font-family: 'Philosopher', Verdana, Tahoma, sans-serif;
     font-weight: 900;
+
+    /* flex justify-center */
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #0682b1;
+    padding: 0.5em;
+    border: 1px solid black;
+}
+
+nav a:hover {
+    color: #0682b1;
+    background-color: #ffffff;
+    border: 1px solid #0eb482;
 }
 
 section {
     margin: 1.8em;
+}
+
+li {
+    /* exactly identical to whats shown in that image */
+    list-style-image: radial-gradient(red, white, green);
+}
+
+section p::first-letter {
+    color: red;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-style: italic;
 }
 
 footer {
@@ -42,6 +76,8 @@ footer {
     font-style: italic;
     text-align: center;
     background-color: DarkSeaGreen;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
 }
 
 footer p {
@@ -49,6 +85,12 @@ footer p {
 }
 
 .highlight {
-    background-color: LightPink;
+    background-image: linear-gradient(to right, Red, Yellow);
+    font-style: italic;
+    font-weight: bold;
+}
+
+.standout, #benefit1, #benefit4 {
+    background-color: yellow;
     font-weight: bold;
 }

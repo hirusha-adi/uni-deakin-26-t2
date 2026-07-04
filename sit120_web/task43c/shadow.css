@@ -1,0 +1,5 @@
+h1, h2, h3 {
+    border: 1px solid rgb(80, 130, 160);
+    border-radius: 1em;
+    box-shadow: 0.4em 0.4em 0.4em rgba(0, 0, 0, 0.35);
+}
