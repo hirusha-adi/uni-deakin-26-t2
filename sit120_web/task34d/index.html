@@ -4,45 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task 3.4D</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .box {
+            background-color: #b2c6e6; /* https://imagecolorpicker.com*/
+            border: 2px solid black;
+            color: white;
+
+            /* flex justify-center items-center tracking-widest */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: 0.1em; /* https://tailwindcss.com/docs/letter-spacing */
+        }
+    </style>
 </head>
+
 <body class="m-0 p-4 bg-white">
 
     <div class="max-w-7xl mx-auto space-y-4">
 
-        <!-- Header -->
-        <header class="bg-blue-200 border-2 border-gray-500 h-28 flex items-center justify-center">
-            <h1 class="text-white text-4xl tracking-widest">Header</h1>
+        <header class="box h-28 text-4xl">
+            Header
         </header>
 
-        <!-- Navigation -->
-        <nav class="bg-blue-200 border-2 border-gray-500 h-16 flex items-center justify-center">
-            <h2 class="text-white text-2xl tracking-widest">Navigation Menu</h2>
+        <nav class="box h-16 text-2xl">
+            Navigation Menu
         </nav>
 
-        <!-- Main layout -->
         <main class="grid grid-cols-1 md:grid-cols-[1fr_3fr_1fr] gap-4">
 
-            <!-- Content 1 -->
-            <section class="bg-blue-200 border-2 border-gray-500 h-48 md:h-[420px] flex items-center justify-center">
-                <h2 class="text-white text-3xl tracking-widest">Content 1</h2>
+            <section class="box h-48 md:h-[420px] text-3xl">
+                Content 1
             </section>
 
-            <!-- Main Content -->
-            <section class="bg-blue-200 border-2 border-gray-500 h-48 md:h-[420px] flex items-center justify-center">
-                <h2 class="text-white text-4xl tracking-widest">Main Content</h2>
+            <section class="box h-48 md:h-[420px] text-4xl">
+                Main Content
             </section>
 
-            <!-- Content 2 -->
-            <aside class="bg-blue-200 border-2 border-gray-500 h-48 md:h-[420px] flex items-center justify-center">
-                <h2 class="text-white text-3xl tracking-widest">Content 2</h2>
+            <aside class="box h-48 md:h-[420px] text-3xl">
+                Content 2
             </aside>
 
         </main>
 
-        <!-- Footer -->
-        <footer class="bg-blue-200 border-2 border-gray-500 h-16 flex items-center justify-center">
-            <h2 class="text-white text-2xl tracking-widest">Footer</h2>
+        <footer class="box h-16 text-2xl">
+            Footer
         </footer>
 
     </div>
