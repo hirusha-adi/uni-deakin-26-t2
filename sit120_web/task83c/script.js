@@ -29,19 +29,23 @@ const validation = (event) => {
     const unit = document.getElementById("unit").value.trim();
     const phone = document.getElementById("phone").value.trim();
 
-    // name validation
+    // name
     if (name === "") {
         showMessage("name", "namemsg", "You did not enter your name", false);
     } else {
         showMessage("name", "namemsg", "Valid", true);
     }
 
-    // email validation
-    if (!email.endsWith("@deakin.edu.au")) {
+    // email
+    const deakinEmail = email.trim().toLowerCase();
+    if (!validator.isEmail(deakinEmail, { host_whitelist: ["deakin.edu.au"] })) {
         showMessage("email", "emailmsg", "Must be your deakin email '@deakin.edu.au'", false);
     } else {
         showMessage("email", "emailmsg", "Valid", true);
     }
+    // ---
+    // or just do a `.endsWith("@deakin.edu.au")`
+    // ---
 
     // unit code validation: 3 letters + 3 numbers
     const unitPattern = /^[A-Za-z]{3}[0-9]{3}$/;
