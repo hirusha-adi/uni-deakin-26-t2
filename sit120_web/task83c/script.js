@@ -36,7 +36,7 @@ const validation = (event) => {
         showMessage("name", "namemsg", "Valid", true);
     }
 
-    // email
+    // email (validator js)
     const deakinEmail = email.trim().toLowerCase();
     if (!validator.isEmail(deakinEmail, { host_whitelist: ["deakin.edu.au"] })) {
         showMessage("email", "emailmsg", "Must be your deakin email '@deakin.edu.au'", false);
@@ -55,7 +55,7 @@ const validation = (event) => {
         showMessage("unit", "unitmsg", "Valid", true);
     }
 
-    // phone validation
+    // phone validation (google's libphonenumber)
     try {
         const phoneUtil = libphonenumber.PhoneNumberUtil.getInstance();
         const phoneNumber = phoneUtil.parseAndKeepRawInput(phone, "AU");
