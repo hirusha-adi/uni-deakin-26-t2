@@ -1,0 +1,148 @@
+/* Starter CSS for Task: Create an HTML form web page */
+
+:root {
+  /* Define global CSS custom properties */
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #0ea5e9;
+  --border: #d1d5db;
+}
+
+/* Select every element on the page */
+* {
+  /* Apply box-sizing: border-box to make sizing more predictable */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg); /* Set the background colour to the value stored in --bg */
+  color: var(--text); /* Set the text colour to the value stored in --text */
+}
+
+.site-header {
+  background: linear-gradient(90deg, #f59e0b, #f97316, #8b5cf6);
+  color: #fff;
+  padding: 18px 20px;
+}
+
+.header-inner {
+  /* Use flexbox to place the header items on one line */
+}
+
+.hero {
+  /* Style the banner section — consider background, padding, and text alignment */
+}
+
+.hero h1 {
+  /* Style the main heading — consider font size and colour */
+}
+
+.hero p {
+  /* Style the subtitle text — consider font size and colour */
+}
+
+.page {
+  /* Set a maximum width and centre the page */
+}
+
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  padding: 28px;
+}
+
+.card h2 {
+  text-align: center;
+  margin: 0 0 22px;
+}
+
+fieldset {
+  /* Remove the default border and spacing */
+}
+
+legend {
+  /* Style each section heading — consider font size, weight, and colour */
+}
+
+.grid-two {
+  /* Create a two-column layout */
+}
+
+.grid-three {
+  /* Create a three-column layout */
+}
+
+.full {
+  /* Make an item span the full row */
+}
+
+.field {
+  /* Add spacing for each field group */
+}
+
+label {
+  /* Display labels above inputs */
+}
+
+input,
+select,
+textarea {
+  /* Make controls full width and style borders */
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  /* Add a visible focus state */
+}
+
+textarea {
+  /* Set height and allow vertical resizing only */
+}
+
+.inline-group {
+  /* Arrange radio buttons and checkboxes neatly */
+}
+
+.inline-group label {
+  /* Use flexbox to align the checkbox or radio input and its label text */
+}
+
+.actions {
+  /* Arrange the buttons */
+}
+
+button {
+  /* Add shared styles for all buttons such as padding and cursor */
+}
+
+.primary {
+  /* Style the submit button */
+}
+
+.secondary {
+  /* Style the reset button */
+}
+
+.site-footer {
+  /* Style the footer bar */
+}
+
+@media (max-width: 760px) {
+  .grid-two,
+  .grid-three {
+    /* Change to a single-column layout on smaller screens */
+  }
+
+  .card {
+    /* Reduce padding on smaller screens */
+  }
+
+  .header-inner {
+    /* Stack the header items vertically on mobile */
+  }
+}

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ice Cream Membership Registration Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div>Ice Cream</div>
+      <div>Order online</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>World of Ice Cream</h1>
+    <p>Order your delicious ice cream here and it will be ready in a snap!</p>
+  </section>
+
+  <main class="page">
+    <section class="card">
+      <h2>Membership Registration Form</h2>
+      <form>
+        <fieldset>
+          <legend>Login details to be used</legend>
+          <div class="grid-two">
+            <div class="field">
+              <label for="email">Email</label>
+              <!-- Students: add the correct input type and required attribute -->
+              <input type="" id="email" name="email">
+            </div>
+            <div class="field">
+              <label for="password">Password</label>
+              <!-- Students: use the correct input type for passwords and add a required attribute -->
+              <input type="" id="password" name="password">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Contact Details</legend>
+          <div class="grid-two">
+            <div class="field">
+              <label for="firstName">Firstname</label>
+              <input type="text" id="firstName" name="firstName">
+            </div>
+            <div class="field">
+              <label for="surname">Surname</label>
+              <input type="text" id="surname" name="surname">
+            </div>
+            <div class="field">
+              <label for="mobile">Mobile</label>
+              <!-- Students: limit this field to 10 digits and numeric input -->
+              <input type="text" id="mobile" name="mobile" placeholder="10 digits">
+            </div>
+            <div class="field">
+              <label for="birthDate">Birth Date</label>
+              <!-- Students: use the date input type here -->
+              <input type="text" id="birthDate" name="birthDate">
+            </div>
+            <div class="field full">
+              <label for="address">Address</label>
+              <input type="text" id="address" name="address">
+            </div>
+            <div class="field full">
+              <label for="address2">Address 2</label>
+              <input type="text" id="address2" name="address2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="grid-three full">
+              <div class="field">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city">
+              </div>
+              <div class="field">
+                <label for="state">State</label>
+                <!-- Students: replace this with a select element -->
+                <input type="text" id="state" name="state">
+              </div>
+              <div class="field">
+                <label for="postcode">Postcode</label>
+                <!-- Students: limit this field to 4 digits -->
+                <input type="text" id="postcode" name="postcode">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Ice Cream Preferences</legend>
+          <div class="grid-two">
+            <div class="field">
+              <label for="favourite">Favourite(s)</label>
+              <!-- Students: replace this with a select element that allows multiple selections -->
+              <input type="text" id="favourite" name="favourite">
+            </div>
+            <div class="field">
+              <label for="type">Preferred Type</label>
+              <!-- Students: replace this with a select element with appropriate options -->
+              <input type="text" id="type" name="type">
+            </div>
+            <div class="field full">
+              <label>Preferred Size</label>
+              <div class="inline-group">
+                <!-- Students: make sure the radio buttons are correctly grouped -->
+                <label><input type="radio" name="size" value="petite"> Petite (extra-small) serve</label>
+                <label><input type="radio" name="size" value="small"> Small serve</label>
+                <label><input type="radio" name="size" value="regular"> Regular Serve</label>
+                <label><input type="radio" name="size" value="jumbo"> Jumbo Serve</label>
+              </div>
+            </div>
+            <div class="field full">
+              <label for="message">Leave us a message</label>
+              <textarea id="message" name="message"></textarea>
+            </div>
+            <div class="field full">
+              <label>Ice Cream Preferences</label>
+              <div class="inline-group">
+                <label><input type="checkbox" name="remember"> Remember me</label>
+                <label><input type="checkbox" name="newsletter"> Sign up for our Monthly Newsletter!</label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="actions">
+          <button class="primary" type="submit">Submit</button>
+          <button class="secondary" type="reset">Reset</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">© 2024 Ice Cream made chilled!</footer>
+</body>
+</html>
