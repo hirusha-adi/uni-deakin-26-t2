@@ -1,53 +1,79 @@
 /* Starter CSS for Task: Create an HTML form web page */
 
 :root {
-  /* Define global CSS custom properties */
+  /* Define global CSS custom properties / variables */
   --bg: #f6f8fb;
   --card: #ffffff;
   --text: #1f2937;
   --muted: #6b7280;
-  --accent: #0ea5e9;
+  --accent: #2563eb;
   --border: #d1d5db;
+  --footer: #1f2937;
 }
 
 /* Select every element on the page */
 * {
   /* Apply box-sizing: border-box to make sizing more predictable */
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: var(--bg); /* Set the background colour to the value stored in --bg */
-  color: var(--text); /* Set the text colour to the value stored in --text */
+  background: var(--bg);
+  /* Set the background colour to the value stored in --bg */
+  color: var(--text);
+  /* Set the text colour to the value stored in --text */
 }
 
+/* Top gradient bar */
 .site-header {
   background: linear-gradient(90deg, #f59e0b, #f97316, #8b5cf6);
   color: #fff;
-  padding: 18px 20px;
+  padding: 12px 70px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .header-inner {
   /* Use flexbox to place the header items on one line */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+/* Hero banner */
 .hero {
   /* Style the banner section — consider background, padding, and text alignment */
+  background: #e0f2fe;
+  padding: 38px 20px;
+  text-align: center;
 }
 
 .hero h1 {
   /* Style the main heading — consider font size and colour */
+  margin: 0;
+  font-size: 42px;
+  font-weight: 400;
+  color: var(--text);
 }
 
 .hero p {
   /* Style the subtitle text — consider font size and colour */
+  margin: 18px 0 0;
+  font-size: 16px;
+  color: var(--muted);
 }
 
+/* Page wrapper */
 .page {
   /* Set a maximum width and centre the page */
+  max-width: 1080px;
+  margin: 28px auto 40px;
+  padding: 0 20px;
 }
 
+/* Form card */
 .card {
   background: var(--card);
   border-radius: 14px;
@@ -58,91 +84,199 @@ body {
 .card h2 {
   text-align: center;
   margin: 0 0 22px;
+  font-size: 24px;
 }
 
+/* Remove default fieldset styles */
 fieldset {
   /* Remove the default border and spacing */
+  border: 0;
+  padding: 0;
+  margin: 0 0 18px;
 }
 
 legend {
   /* Style each section heading — consider font size, weight, and colour */
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
+/* Layout grids */
 .grid-two {
   /* Create a two-column layout */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 18px;
 }
 
 .grid-three {
   /* Create a three-column layout */
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 14px;
 }
 
 .full {
   /* Make an item span the full row */
+  grid-column: 1 / -1;
 }
 
 .field {
   /* Add spacing for each field group */
+  width: 100%;
 }
 
 label {
   /* Display labels above inputs */
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
 }
 
+/* Form controls */
 input,
 select,
 textarea {
   /* Make controls full width and style borders */
+  width: 100%;
+  font: inherit;
+  font-size: 15px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--text);
+}
+
+select[multiple],
+select[size] {
+  padding: 8px 12px;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
   /* Add a visible focus state */
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
 textarea {
   /* Set height and allow vertical resizing only */
+  min-height: 105px;
+  resize: vertical;
 }
 
+/* Radio and checkbox rows */
 .inline-group {
   /* Arrange radio buttons and checkboxes neatly */
+  display: flex;
+  align-items: flex-start;
+  gap: 42px;
+  flex-wrap: wrap;
+  margin-top: 8px;
 }
 
 .inline-group label {
   /* Use flexbox to align the checkbox or radio input and its label text */
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 0;
+  line-height: 1.1;
 }
 
+.inline-group input {
+  width: auto;
+  margin-top: 2px;
+}
+
+.small-options {
+  gap: 70px;
+}
+
+/* Buttons */
 .actions {
   /* Arrange the buttons */
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
 }
 
 button {
   /* Add shared styles for all buttons such as padding and cursor */
+  border: 0;
+  border-radius: 6px;
+  padding: 11px 18px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .primary {
   /* Style the submit button */
+  background: var(--accent);
+  color: #fff;
 }
 
 .secondary {
   /* Style the reset button */
+  background: #e5e7eb;
+  color: var(--text);
 }
 
+button:hover {
+  opacity: 0.9;
+}
+
+/* Footer */
 .site-footer {
   /* Style the footer bar */
+  background: var(--footer);
+  color: #fff;
+  text-align: center;
+  padding: 16px;
+  font-size: 14px;
 }
 
+/* Mobile layout */
 @media (max-width: 760px) {
-  .grid-two,
-  .grid-three {
-    /* Change to a single-column layout on smaller screens */
-  }
-
-  .card {
-    /* Reduce padding on smaller screens */
+  .site-header {
+    padding: 12px 20px;
   }
 
   .header-inner {
     /* Stack the header items vertically on mobile */
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .grid-two,
+  .grid-three {
+    /* Change to a single-column layout on smaller screens */
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    /* Reduce padding on smaller screens */
+    padding: 20px;
+  }
+
+  .inline-group {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
   }
 }
