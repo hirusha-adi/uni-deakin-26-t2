@@ -1,0 +1,2 @@
+https://snyk.io/articles/sdlc-software-development-life-cycle/
+https://snyk.io/articles/secure-sdlc/
