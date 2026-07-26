@@ -1,6 +1,6 @@
 # Notes
 
-# 2.2
+## 2.2
 
 - The application layer in the TCP/IP model is the interface that prepares our communication for trasmission over the computer networks
 
@@ -25,10 +25,21 @@ The table below has been yoinked from the lecture video into chatgpt to generate
 | Interactive games      | World of Warcraft, first-person shooters and other proprietary protocols                                                                                 | [UDP — RFC 768](https://www.rfc-editor.org/rfc/rfc768.html) or [TCP — RFC 9293](https://www.rfc-editor.org/rfc/rfc9293.html) |
 
 
-# 2.3
+## 2.3
 
 - The application layer protocols are essential.
 
+## 2.4
+
+- HTTP/1.1 - [RFC 2616](https://datatracker.ietf.org/doc/html/rfc2616)
+- HTTP/2 - [RFC 7540](https://datatracker.ietf.org/doc/html/rfc7540)
+
+
+request structure:
+![alt text](image-2.png)
+
+response structure:
+![alt text](image-3.png)
 
 
 
@@ -63,6 +74,66 @@ Peer to peer architechture:
 ## Exercise 2.4.1
 
 ![alt text](image-1.png)
+
+My browser uses persistant HTTP connections. Instead of creating a new connection for every object, it simply reuses an already established connection when having to deal with multiple HTTP requests and responses. 
+
+HTTP 1.1 uses persistant connections by default. HTTP 2 can multiple multiple request-response streams over one TCP connection and HTTP 3 also provides a similar multiplexing capability over QUIC. Therefore, modern browser traffic is generally persistent unless the server explicitly closes the connection or doesn't support connection reuse.
+
+Multiplexing allows several HTTP requests to be sent over the same connection at the same time and their responses can arrive in any interleaved order. This is used by both HTTP 2 and 3 to ensure that one slow response doesnt completely block everything else.
+
+## Exercise 2.4.2
+
+- GET: retrieves a resource
+- POST: sends data to the server for processing. Very commonly used for form submissions, authentication, file uploads, and similar actions.
+- PUT: create or fully replace an existing resource
+- PATCH: update a resource without replacing everything
+- DELETE: remove a resource
+- HEAD: works like GET but will only return the response headers and not the response body.
+- OPTIONS: request information about methods and features supported by a server (or a resource)
+- QUERY: perform a read only server side query with the query parameters in the request body. introduced in June 2026 in [RFC 10008](https://datatracker.ietf.org/doc/html/rfc10008). 
+
+
+## Exercise 2.4.3
+
+Command to run is: `curl -sI -L <URL>`.
+Based on https://stackoverflow.com/a/4497786
+
+![alt text](image-4.png)
+
+This command displays all the headers. Since we want to filter out cookie details, I will just grep it / use `findstr`.
+
+Three cookies set from google.com. There are three cookies.
+- __Secure-STRP
+    - has not been documented officially but seems to be something security related and expires within 5 minutes.
+    - Response was generated at 11:26:45 GMT and expires at 11:31:45 GMT.
+    - Cookie will only be sent during same site interactions. It won't be sent when user visits google from another site to protect against XSS attacks.
+    - Might be accessible via document.cookie.
+- AEC
+    - Used to detect spam, fraud and abuse by google. 
+    - Expires in 22 January 2027, 11:26:45 GMT
+    - Secure: Only sent through HTTPS
+    - HttpOnly: not accessible via document.cookie
+    - SameSite=Lax: generally blocked from cross site subrequests. However, it might still be available if the user directly goes to google through a normal top level link. 
+    - Path=/: applies to every URL path under the specified domain.
+- NID
+    - Used to store user preferences and to support with analytics and advertising.
+    - It's HttpOnly.
+    - However, it doesn't have the Secure attribute set. This means the cookie is not restircted to HTTPS - but google uses HTTPS and HSTS. 
+    - Has no SameSite attribute explicitly set, but by default, chromium treats this as SameSite=Lax. https://privacysandbox.google.com/cookies/basics/cookie-attributes
+
+Functionalities of these cookies can be found here: https://policies.google.com/technologies/cookies
+
+![alt text](image-5.png)
+
+However, with amazon, at first, the response was a "503 Service Temporarily Unavailable".
+![alt text](image-6.png)
+
+Next, I attempted it with a user agent and I got a "405 Method Not Allowed". The only allowed methods here are "GET, POST, PUT, DELETE, OPTIONS" as seen below.
+![alt text](image-7.png)
+
+
+## Exercise 2.6.1
+
 
 
 
