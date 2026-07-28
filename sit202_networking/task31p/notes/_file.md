@@ -134,6 +134,12 @@ Next, I attempted it with a user agent and I got a "405 Method Not Allowed". The
 
 ## Exercise 2.6.1
 
+![alt text](image-8.png)
+
+
+## Exercise 2.6.2
+
+
 
 
 
