@@ -59,7 +59,7 @@ while True:
         if hostname == domain:
             host_label = "@"
         elif hostname.endswith(f".{domain}"):
-            host_label = hostname[:-(len(domain) + 1)]
+            host_label = hostname[:-(len(domain) + 1)] # exclude the . before the domain
         else:
             continue
 
