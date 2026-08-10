@@ -1,0 +1,70 @@
+TCP
+Transmission Control Protocol (TCP) is a connection-oriented transport layer protocol.  This means applications processes which are at different end systems need to establish a connection before they communicate any application data/messages with each other.  TCP was first standardised in  RFC 793 and later enhanced in RFC 1122, RFC 1323, RFC 2018, and RFC 2581.
+
+When applications use TCP, the end systems must first “handshake” with each other to agree on certain parameters that will be used for TCP connections. TCP has a point-to-point connection between two application processes (not point to multipoint connections).  TCP also provides two-way full-duplex communication. For example, data from Application process X running at Host A and Application process Y running at Host B can flow in each direction if they are logically connected with TCP.
+
+When a TCP connection is established, the client process and server process can transfer data between them. When either process wants to send a stream of data, the data must pass through the socket to the transport layer at the sender’s end. TCP stores these data first in the TCP send buffer. Buffering is a computing technique where certain amount of data is held or stored somewhere before being sent somewhere else.  The TCP send buffer is one of the buffers that is set during the TCP connection establishment process. TCP takes data chunks from the sender’s buffer and adds the TCP header to create a TCP segment. This TCP segment is then passed on to the sender's side network layer.
+
+The maximum amount of data that can be taken from the sender’s buffer depends on the maximum segment size (MSS). The maximum segment size is typically defined by the maximum link-layer frame that can be used. For example, if Ethernet has the maximum frame size of 1500 Bytes. Then,
+
+MSS = 1500 Bytes- total length of TCP and IP headers
+
+         = 1500 Bytes – 40 Bytes
+
+         = 1460 bytes.
+
+You may have already noticed that MSS is not the total length of the TCP segment but the length of application layer data chunk that takes from the sender’s TCP buffer.
+
+TCP connection
+Figure 1: A TCP connection
+
+A similar scenario is happening on the receiver side as shown in the above figure . When the transport layer receives the segments, TCP extracts the application layer data and places the data in the TCP receiver’s buffer. The application process pulls the application data from this buffer via the socket. As you can see, each end system has its own send buffer and receive buffer.
+
+Now you might be interested in learning about TCP connection establishment. However, before we look at how a TCP connection is established, we need to understand the TCP segment structure and header fields.
+
+Unlike UDP, TCP segments have a larger header.
+
+The Structure of TCP Segment
+The structure of the TCP segment is explained in the following video.
+
+
+
+Please watch the following video for more details about the sequence and acknowledgement numbers.
+
+
+
+TCP segments are constructed dynamically, depending on the Window size and the MSS. If the Window size< MSS, then TCP constructs one segment. If not, TCP constructs multiple TCP segments with segment size =<MSS.  Remember, the Window size field is in the TCP segment header. Flow control in TCP is handled using a variable sized sliding window. The Window Size field tells you how many bytes the receiver can receive based on the current buffer capacity.
+
+If there is a missing segment, then TCP retransmits the byte stream creating segments. However, as we have seen in the previous video, segments may arrive out of order. Therefore, the TCP receiver should handle out of order segments in a proper way, so that data / bandwidth wastage can be minimised.
+
+  Exercise
+Explore different TCP segments in a Wireshark packet capture and identify different header fields used in TCP segments. Note down your answer before you continue.
+
+TCP Connection Establishment / Closure
+We know the structure and header fields of TCP segment. Next, we are going to look at how we can use some of these header fields to establish a TCP connection and also to close a TCP connection.
+
+
+
+A three way handshake is important in TCP connection establishment. However, the handshake is vulnerable for one of the major type of attacks we have in computer networks by flooding the " SYN" message - this type of attack is called Distributed Denial of Service (DDoS)  attack. In DoS attack, the attacker attempts to disrupt the normal traffic of a targeted service/ device/network by overwhelming it with a flood of traffic. DDos attack can be initiated leveraging the weaknesses of other protocols (other than TCP). You will learn more about these different types of attacks in one of the next networking units you have in your course.
+
+  Exercise
+In a Wireshark Packet capture of a network application that uses TCP as the transport layer protocol, can you identify "three-way handshake"  and relevant TCP segments with SYN, SYN/ACK, ACK flags are set to 1?
+
+TCP Retransmissions
+In any data transmission, the packets (segments for our discussion in this module) can get lost during the transmission process.
+
+In computer networking, the protocols that used retransmission after detecting errors to provide a reliable communication are known as Automatic Repeat request (ARQ) protocols. Three main parts of ARQ protocols are error detection, receiver feedback, and retransmission. We will discuss these in detail when we learn about data link layer in Module 6.  However, in this module we will keep our focus on ARQ related protocols we use in TCP.
+
+TCP uses a timeout or retransmit mechanism to recover from lost segments. If segments (Bytes Stream) that sent from the sender have not been acknowledged within a specific time frame,  the relevant chunks of Byte stream (creating new TCP segment/s)  are retransmitted from the sender to the receiver.
+
+Let's look at how to estimate the length of the timeout interval and how TCP retransmission occurs.
+
+
+
+A few retransmission scenarios are discussed in the below video.
+
+
+
+Feeling Stuck? Reach out
+Attributions
+Banner image: https://pixabay.com/vectors/city-map-location-navigation-map-4320755/

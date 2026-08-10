@@ -1,0 +1,39 @@
+Services Provided by the Transport Layer
+The transport layer provides a logical communication link between different application processes that are running on different end systems /hosts. On the other hand, the network layer provides a logical communication link between different end systems that are residing in the same network or different networks (or in different countries/ continents). To provide the transport layer services, we use transport layer protocols. In this module, we will discuss two transport layer protocols we use for internet applications, and they are:
+
+Transmission Control Protocol (TCP)
+User Datagram Protocol (UDP)
+Please watch the following video that further describes the transport layer services and the relationship between transport layer services/protocols and network layer services/protocols.
+
+
+
+Remember, the transport layer provides logical communication between different application processes that are running on different end systems (or hosts) using the transport layer protocols.
+
+Transport Layer Multiplexing and Demultiplexing
+One of the main responsibilities of the transport layer protocol is extending the network layer's delivery service between two end systems to a delivery service between multiple application processes running on the end systems. This extension of this host-to-host logical connection to the process-to-process logical connection is done using transport layer multiplexing and demultiplexing. This is what exactly mothers have done, in our postal service example that we have discussed in the above video. One mother (=>transport layer protocol) in the Australian house (=>host) collected (=>multiplexed) letters (=>messages) from her kids (=>application processes) and passed those on to the postal service (=> network layer protocol). The other mother (=>transport layer protocol) in the Belgium house (=>host) looked at the names on the envelopes (=>segment header) and distributed (=>demultiplexed) letters (=>messages) to her kids (=>application processes) which are passed down from the postal service (=> network layer protocols).
+
+  Exercise
+Answer the following questions:
+
+Why do we need transport layer protocols?
+Can the Internet survive without transport layer protocols?
+Note down your answers before you continue.
+
+Sockets (From Module 2)
+We know that the client and server processes communicate with each other by sending  and receiving messages via the computer network. Any given process sends or receives messages via a software interface called a socket. Sockets are the endpoints of both client and server processes' communication over the network. Watch the following video provides more details about sockets and the addressing process.
+
+
+
+You already know that a socket provides a link between the transport layer protocol and application processes. While a socket pushes messages to the transport layer from an application and pulls messages from the transport layer to an application process, the transport layer protocol is the one that is responsible for transferring messages across the sockets.
+
+Multiplexing and Demultiplexing
+Transport layer multiplexing and demultiplexing are explained in the below video.
+
+
+
+The information required to perform multiplexing and demultiplexing in connectionless and connection-oriented transport layer protocols are explained in the following video.
+
+
+
+  Exercise
+Determine the source and destination ports of the transport layer segments that are sending from Hosts B to C and C to B, in the connectionless multiplexing and demultiplexing example that we discussed in the above video.

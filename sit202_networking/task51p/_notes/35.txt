@@ -1,0 +1,47 @@
+Flow control
+Remember, when an application wants to send a stream of data, the data must pass through the socket to the transport layer at the sender’s end. TCP stores this data first in the TCP send buffer. TCP takes data chunks from the sender’s buffer and adds the TCP header to create a TCP segment. This TCP segment is then passed on to the sender's side network layer. At the receiver, the application process reads the data from the receiver buffer. Sometimes, the application process does not pull data directly from the buffer if the application process is busy with another task. In such a situation, the receiver's TCP buffer can easily overflow if the sender keeps sending the data without knowing that the receiver's application is not pulling the data from the buffer. This could make receiver's TCP buffer overflow and result in loss of some data.
+
+To avoid such a scenario, TCP provides a flow-control service. TCP utilises a sliding window for flow control. The flow control service controls the speed of data sent from the sender to match the speed of the receiver's application process reading the data. We also have another mechanism at the sender to monitor and control the amount of data entering into the network layer to avoid any congestion. This mechanism is called the congestion control and we will also briefly look at this in the next section.
+
+TCP provides both flow control and congestion control services.
+
+Sliding Window
+Remember, the Window size field is in the TCP segment header. Flow control in TCP is handled using a variable sized sliding window. The Window Size field tells how many bytes the receiver can receive based on the current buffer capacity at the receiver.  This means the sliding window specifies the number of unacknowledged bytes that a sender can send to a receiver. If the receiver's buffer is full, then the receiver advertises this to the sender via setting the window size field of the TCP segment header to zero.
+
+Let’s look at an example.
+
+Let’s assume that Host A wants to send 9 kB (9000 Bytes) image to Host B. When the TCP connection between Host A and B established, Host B advertises its receive window size which equals to 4,000 Bytes via the window size field. Now, the Byte stream of this image is placed in Host A’s TCP buffer depending on the buffer size and Host A’s TCP takes the 4,000 Bytes from the buffer. TCP segments those into 4 (1000 Bytes in each segment) and sends that to the network layer. Host A knows that it can only send 4 segments (as the receive window size is 4,000 Bytes) beforehand it receives any acknowledgement from HOST B.  If Host A gets the acknowledgement for the first segment it sent (3 segments are still in flight), then Host A can send another segment which brings the total segments in flight again to 4 (4000 Bytes, which is the restriction set by the receiver window field). This means, at any given time 4 segments can be in flight that were sent by Host A but not yet acknowledged by Host B.
+
+The following figure shows the operation of sliding window where the sliding window is set to 6000 Bytes and the segment size is 1500 Bytes.
+
+Sliding window at segments 2-5
+Figure 1: The operation of a sliding window (currently at segments 2-5)
+
+As soon as the Host A received the acknowledgement for segment 2, from Host B, the sliding window can move on to Segment 3 – 6 as shown in the below figure.
+
+Sliding window at segment 3-6
+Figure 2: The operation of a sliding window (moved to segments 3-6)
+
+If the application process at Host B does not pull the data from the receiver buffer as soon as the data is received, then the TCP at the receiver end adjusts the window size to suit the new available capacity at the buffer and advertises that to Host A.  So that Host A can reduce (slow down the sending process) the number of bytes/segments that is in the flight.
+
+ARQ Protocols
+We cannot complete this discussion without talking about automatic repeat request (ARQ). Flow control itself do not provide reliable communication. There are many components involved in providing reliable communications in case there is an error. Some of these components are error detection, receipt acknowledgement and retransmission. When there is an error and we use the above techniques to recover from the error, we call this collective effort as ARQ algorithms. As we have discussed in the previous section, ARQ can be handled by both transport layer and data-link layer. Therefore, these algorithms can reside in transport layer/ data-link layer.
+
+Application
+Transport
+Network
+Data Link
+Physical
+Three main ARQ algorithms we use in computer networks are,
+
+Stop-and-wait : The sender sends one packet and then waits for acknowledgment before proceeding. However, this technique can lead to channel utilisation issues as the sender is waiting for acknowledgement before sending the next packet.
+Go-back-N : The sender sends multiple packets without waiting for an acknowledgment within a given maximum allowable number of unacknowledged packet in flight (or pipeline) using the window size. This approach reduces the channel utilisation problem occurred in Stop-and-wait. However, when there is an error, sender might need to retransmit multiple packets when we use this technique.
+Selective repeat: The sender retransmits only the packets, it guessed that were received with errors, rather than retransmitting a whole bunch of packets and hence reduce any unwanted retransmission of packets that can be occurred in Go-back-N.
+  Exercise
+You can play with applet developed by Johannes Kessler to understand two ARQ algorithms, I.e., the Selective Repeat and Go Back N protocols. The applet can be accessed via  https://www2.tkn.tu-berlin.de/teaching/rn/animations/gbn_sr/
+
+Can you identify the differences between these algorithms
+
+Feeling Stuck? Reach out
+Attributions
+Banner image: https://pixabay.com/vectors/city-map-location-navigation-map-4320755/

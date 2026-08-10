@@ -1,0 +1,34 @@
+TCP Congestion Control
+We have already discussed the fundamentals of TCP and if you think we covered many things about TCP, yes, we did. However, we cannot complete our discussion about TCP without mentioning "TCP congestion control".
+
+TCP congestion control is a vast topic. Here, we only provide a basic introduction to TCP congestion control as it is a key component of TCP.
+
+In TCP, the sender limits the amount of data it sends to the network (end-to-end) as function of any network congestion that it may become aware of. The sender increases the rate that it sends packets if the sender notices little congestion between the sender and the receiver.  The sender decreases the rate that it sends the packets if the sender notices congestion between the sender and the receiver.
+
+TCP interprets packet loss as congestion (packet loss can happen due to other reasons too such as interference). However, in many cases, packets can be dropped and lost due to network congestion.
+
+Let's look at an example. In the following network diagram, if 4C (4 * packet sending rate of a computer) > D (link rate) and the network device’s buffer capacity is full, then the network device drops the packets that are sending from its connected computers.
+
+Network packet drops
+Figure 1: Network device buffer capacity is full resulting in dropped packets
+
+TCP in each sender increases the packet send rate until packets are dropped. Senders increase the send rate by intermittently examining the network to see whether there is more bandwidth available to send more packets. When the sender notices packet loss, sender interprets the packet loss as congestion, and reduces the packet send rate. As you can see, TCP congestion control mechanism has two parts.
+
+A sending rate increase algorithm: sender checks whether network can bear a higher sending rate.
+A sending rate decrease algorithm: when sender notices a congestion then the sender reduces the rate to enhance the packet delay and loss rate.
+Like flow control mechanisms, TCP congestion-control mechanisms use another variable at the sender, that is congestion window. Congestion window limits the sending rate of data to the network.
+
+If we consider both “receive window” that we use for flow control and “congestion window” we have here, then the number of unacknowledged segments/Bytes at the sender should not exceed the minimum of {congestion window, receive window} to satisfy congestion control and flow control requirements.
+
+The congestion window can be adjusted to control the congestion. For example, if the sender observes that the acknowledgements are received at a higher rate, then the sender increases the congestion window size. As you can see, TCP uses acknowledgements to induce the increase in congestion window size. This is why TCP is said to be "self-clocking".  On the other hand, the receipt of the duplicate acknowledgements or timeout indicates network congestion.
+
+TCP Congestion Control algorithm has two main phases,
+
+Slow Start: TCP send rate (congestion window) starts slowly. However, it grows exponentially during the slow start phase until the threshold. After reaching the threshold, the algorithm moves to the next phase, congestion avoidance.
+Congestion Avoidance: Value of congestion window is increased by just a single MSS every round trip time (RTT).
+Apart from the above two phases, there is a fast recovery phase , which is not a compulsory phase to have in congestion control mechanisms. Many different variations of congestion control mechanisms have been developed to optimize network performance. However, we stop our discussion here as we cover enough details to understand the core concept of congestion control.
+
+If you are interested in finding out further details about the congestion control mechanism, please refer to Sections 3.6 and 3.7 of Chapter 3 from your recommended text "Computer Networking: A Top-Down Approach"  (Edition 7) by James, F Kurose, Amherst Keith Ross.
+
+Attributions
+Banner image: https://pixabay.com/vectors/city-map-location-navigation-map-4320755/

@@ -1,0 +1,48 @@
+User Datagram Protocol (UDP)
+What is UDP?
+
+
+
+UDP Segment Header
+The UDP segment headers are explained in the following video:
+
+
+
+Even though the UDP checksum enables error detection at the transport layer, it provides weak protection. If two 16-bit words changed due to errors such a way that the summation is the same as the summation of two original 16-bit words sent by the sender, then we cannot use the checksum to detect the errors.
+
+Let's look at an example,
+
+Assume a sender sends the following two 16-bits long words. The sender calculates  the checksum as follows and includes the checksum in the checksum field of the UDP segment header.
+
+Original checksum calculation
+Figure 1: The original checksum calculation
+
+As shown in Figure 1, make sure to take the one's complement (toggling all bits ) of the sum after wraparound to calculate the checksum.
+
+What happens at the receiver:  the receiver receives the two 16-bits long words and checksum. The receiver add these three things together.
+
+
+
+Figure 2: Error checking at the receiver
+
+If the sum (after the wraparound ) is all 1s, then there is no errors in the received bits. As you can see, there is no error detected in the above example. If the sum (after the wraparound) contains any zeros, then the receiver detects errors in the received bits.
+
+Let's say, during the transmission, two  16-bits long words were changed due to errors as follows,
+
+Checksum after error
+Figure 3: The checksum calculation after an error
+
+However, when the receiver calculates the checksum, it has the same value as in the checksum field of the UDP header. Therefore, the transport layer at the receiver side cannot detect the errors occurred. This could be a rare event. However, this is something that could happen in trillions of bytes that networks transmit in each second.
+
+When the transport layer detects errors, it takes one of the following two actions depending on the way UDP is implemented.
+
+simply discards the damaged segment
+extracts the message and pass it on to the application layer with a warning.
+Another simple example of a checksum calculation can be found in the following video.
+
+
+
+In memory of Dr Justin Rough
+
+Attributions
+Banner image: https://pixabay.com/vectors/city-map-location-navigation-map-4320755/

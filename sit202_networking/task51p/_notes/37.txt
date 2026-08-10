@@ -1,0 +1,92 @@
+Sockets in Python
+In your Week 4 and Week 5 Seminars/ Active classes, you will be using Socket programming in Python to enhance your understanding on the two transport layer protocols we discuss in this module. Therefore, we will first go through some basics of Python programming. Python is a very popular scripting language that provides access to system functions, including the sockets API.  Other common uses of Python include automating operating systems, cloud functions, data science, web development, tools for cyber security penetration testing, and so on.
+
+Python is a relatively easy language to learn.  Note that there is no requirement for expertise in programming to complete the activities designed for this module.
+
+First you need to download the Python Integrated Development Environment (IDE) that we use in this unit. We use PyCharm IDE. You can download PyCharm via this link:
+
+https://www.jetbrains.com/pycharm-edu/
+and install PyCharm in your laptop/ personal computer.
+
+You may want to install Python itself if you are a Windows user. You can install Python from python.org. If you are a Mac or Linux user, you will not need to install Python as your computer already has Python installed.
+
+Everything you do in PyCharm, you do within the context of a project. Please go through this link:
+
+https://www.jetbrains.com/help/pycharm/creating-and-running-your-first-python-project.html#prerequisites
+To get yourself familiarised with some basic Python coding and PyCharm IDE. You can find more details on how to create a new project, write Python programs, and run programs via the above link.
+
+Additional Help for Programming in Python
+If you are not familiar with Python or you want to extend your programming knowledge and use that for networking application, you can refer to the crash course we have prepared. You can also refer to the cheat sheet that contains key information of the things we cover in the crash course.
+
+Now you are ready to explore transport layer protocols using Python. Let's look at creating networking applications in Python before you start implementing them in your seminar/ active class.
+
+Server - Client Chat Program over UDP
+Go through this before Week 4 Active Class/Seminar
+
+Now we are going to look at how to create a simple server-client chat program that uses UDP as the transport layer protocol using Python.
+
+Server requirements: We want to build a server that uses UDP as a transport layer protocol. When the server is started, the server listens to the clients indefinitely and should be able to print the following message in the terminal. "The Server is Listening". Once the server received a full message from a client, the server sends a reply to the client with the same message + additional string " is received".
+
+Client requirements: The client should be able to send a message to the server over UDP. When a client sends message to the server, the server sends a reply to the client with the same message + " is received" string. Once the client received the reply, the client should be able to display the received reply in the terminal.
+
+To build this server client program, we use socket programming in Python.
+
+The following script shows the client-side program, client.py.
+
+client.py
+Figure 1: client.py script
+
+Let's look at each line of the code.
+
+To create sockets in Python, we need to import the socket module, which provides us access to the sockets API.
+Sets the variable serverName to a string that represents the IP address of the server. Here we use the IP address of the localhost.
+Sets the integer variable ServerPort. Remember, we need the destination port number to communicate with the server.
+Creates the client side socket, called clientSocket. "socket" object has two parameters, the first parameter defines the version of IP address used and the second parameter defines the type of the socket, i.e., UDP or TCP. In here, the first parameter, AF_INET represents that we use IPv4 and the second parameter, SOCK_DGRAM represents that we are creating a UDP socket. We do not specify the client port number here, instead we let the operating system to define a port number for the client.
+Variable "message" sets the message that we need to send to the server.
+encode() method converts the message string to byte type as we require to send bytes to a socket. The method sendto() adds the destination address ( serverName, serverPort ) to the message and sends the resulting packet into clientSocket. Remember, we also need to attach the source address to the packet. However, this is done automatically, and we do not need to specify the source address details here.
+When a message is received by the client, method recvfrom() takes the buffer size 2048. The packet data is included in ServerReply Variable. The source IP address and port number of the received packet are included in serverAddress Variable.
+Print the reply received from the server in the terminal. Method decode() is used to convert bytes received from the socket to string type.
+Close the socket.
+The Server
+The following script shows the server side program, server.py which should be included in a different PyCharm project.
+
+server.py
+Figure 2: server.py script
+
+The server side implementation and the client side implementation have some similarities. However, when the server is started, it needs to listen to the incoming packets. Let's look at each line of the server.py code.
+
+We need to import the socket module, which provides us access to the socket API.
+Sets the integer variable ServerPort . Remember, we need the destination port number to communicate with the server.
+Similar to the client side implementation, we create the server side socket, called serverSocket.  In here, the first parameter, AF_INET represents that we use IPv4 and the second parameter, SOCK_DGRAM represents that we are creating UDP socket.
+"binds" assigns the port number 11500 to the server’s socket. In the UDP server implementation, we need to assign a port number to a socket. So that we can make sure a packet with 11500 port number and server IP address  will be directed to this socket.
+When the server is running, it displays "The Server is listening" message in the terminal.
+UDPServer enters a while loop which makes the server to be in the listening mode indefinitely and waits for a packet.
+This is similar to what we have in the client side implementation. When a message is received by the server. The packet data is included in "message"variable. The source IP address and port number of the received packet are included in "clientAddress" Variable.
+ClientSendMessage1 variable gets the message sent by the client after converting the message to a string and adding an extra string "is received" to the end of the message.
+encode() method converts ClientSendMessage1 string to byte type as we require to send bytes to a socket. The method sendto() adds the destination address to the message and sends the resulting packet into serverSocket.
+Now we are ready to run the code and see the results. Please also note that you will need to have two different projects for implementing the client and the server. You will do a similar activity in the Week 4 Seminar/ Active Class.
+
+Server - Client Chat Program over TCP
+Go through this before Week 5 Active Class/Seminar.
+
+You can use the knowledge and experience you have gained through developing the UDP-based server-client chat program in Week 4 Seminar/Active Class to develop the TCP-based server-client chat program in Week 5 Seminar/Active Class. The main difference now we have when we use TCP instead of UDP, the client and the server needs to establish a connection before sending any messages. In order to create a TCP socket, we now need to use "SOCK_STREAM" instead of "SOCK_DGRAM" in both client and server programs. Then, we need to initiate the three-way handshake between the client and the server. We can implement these functionalities at the client side by using the following script.
+
+# creates a TCP socket at the client program
+clientSocket = socket(AF_INET, SOCK_STREAM)
+
+# Initiate three-way handshake with the server "serverName" serving at port "serverPort"
+clientSocket.connect((serverName, serverPort))
+At the server, we need to create a TCP socket and the server is now ready to listen to connection requests.
+
+ # creates a TCP socket at the server program
+serverSocket = socket(AF_INET, SOCK_STREAM)
+
+# listen to the TCP socket created at the server, the parameter defines the maximum number of queued connections
+serverSocket.listen(1)
+When a client contacts the server to initiate a connection, the server program invokes the accept() method for serverSocket.
+
+connectCl1Socket, addr = serverSocket.accept()
+This method creates a new socket in the server "connectCl1Socket" which is specific to the client who contacted the server. Then, the handshaking process between the client and the server is completed by accept() method, creating a TCP connection between the client’s clientSocket and the server’s connectCl1Socket.
+
+Attributions
+Banner image: https://pixabay.com/vectors/city-map-location-navigation-map-4320755/

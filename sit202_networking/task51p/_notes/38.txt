@@ -1,0 +1,21 @@
+Module related active classes
+
+The collaborative learning activities enable you to work in teams with your fellow students to apply concepts that you have learnt and analyse and implement network protocols. In particular, you will engage with your peers in role playing network protocols, analysing network protocols, and implementing networks and network protocols.
+
+These activities follow a fixed schedule across the trimester. On-campus students will participate in their regularly scheduled classes. Online students will participate in these activities via Cloud Classrooms (using MSTeams).
+
+Now you are ready to complete the Week 4 active class.  The class activity is designed to be worked through active participation and collaborating with peers under the guidance of the teaching team in the class. The active classes are designed to be interactive, and they are here for you to extend your learning. However, these classes will only help you to enhance your learning if you come prepared.  To work on the class activities, you will be expected to have completed the relevant sections of the module.
+
+The activity sheet of Week 4 Active class can be found here: Active class week 4: Introduction.  In order to complete this active class, you need to complete  the following sections of Module 3.
+
+Introduction
+Key responsibilities and concepts of transport layer
+UDP
+Socket programming in Python
+The activity sheet for Week 5 Active class can be found here: Active class week 5: Introduction.  In order to complete this active class, you need to complete the entire Module 3.
+
+The active classes are related to assessment tasks on OnTrack. After learning about different concepts from the content provided in the unit site, you will expand on this knowledge by working on activities designed to put these concepts into practice during the active classes and submit the completed task to OnTrack in the same week. The teaching team will guide and support your learning during these activities in the active class.
+
+Attributions
+Banner image: https://pixabay.com/vectors/city-map-location-navigation-map-4320755/
+Active classes image: https://pixabay.com/vectors/pixel-cells-pixel-to-learn-3674104/
