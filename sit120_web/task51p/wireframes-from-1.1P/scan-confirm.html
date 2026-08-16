@@ -1,148 +1,91 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            lens: {
-              teal: "#155E63",
-              cream: "#F6F3EA",
-              orange: "#B64900",
-              ink: "#17383A",
-              pale: "#E5EFEC"
-            }
-          }
-        }
-      }
-    }
-  </script>
-
-  <title>LabelLens — Scan Wireframe</title>
+  <title>LabelLens — Scan</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
-<body class="min-h-screen bg-lens-cream text-lens-ink">
-  <div class="mx-auto min-h-screen max-w-7xl bg-white shadow-sm">
-    <header class="flex items-center justify-between border-b border-stone-200 px-5 py-4 md:px-10">
-      <a href="index.html" class="flex items-center gap-3">
-        <div class="h-10 w-10 rounded-xl bg-lens-teal"></div>
-        <span class="font-semibold">LabelLens</span>
+<body>
+  <div class="site">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="logo" aria-hidden="true"></span>
+        LabelLens
       </a>
-
-      <nav class="hidden items-center gap-7 text-sm md:flex">
+      <nav class="site-nav" aria-label="Main">
         <a href="index.html">Home</a>
-        <a href="scan-confirm.html">Scan</a>
+        <a href="scan-confirm.html" aria-current="page">Scan</a>
         <a href="additive-results.html">Compare</a>
-        <div class="h-9 w-24 rounded-full bg-lens-teal"></div>
       </nav>
-
-      <div class="h-10 w-10 rounded-xl border border-stone-300 md:hidden"></div>
     </header>
 
-    <main class="px-5 py-8 md:px-10 md:py-14">
-      <div class="mb-8 flex flex-wrap items-end justify-between gap-5">
-        <div>
-          <p class="text-xs uppercase tracking-[0.2em] text-lens-orange">Camera workflow</p>
-          <div class="mt-3 h-10 w-64 rounded-lg bg-lens-teal"></div>
-          <div class="mt-4 h-3 w-72 max-w-full rounded bg-stone-200"></div>
-        </div>
-        <div class="flex gap-2">
-          <div class="h-2 w-12 rounded-full bg-lens-teal"></div>
-          <div class="h-2 w-12 rounded-full bg-stone-200"></div>
-        </div>
-      </div>
+    <main>
+      <section>
+        <p class="kicker">Camera workflow</p>
+        <h1>Scan and confirm the ingredients</h1>
+        <p>
+          Hold the pack steady so the ingredients panel fills the frame. After the
+          photo is taken, check each detected additive before you open the results.
+        </p>
 
-      <section class="grid gap-6 lg:grid-cols-[1.05fr_.95fr]">
-        <div class="rounded-[2rem] bg-lens-teal p-5 md:p-8">
-          <div class="flex min-h-[520px] items-center justify-center rounded-[1.5rem] border-2 border-dashed border-white/50">
-            <span class="rounded-full bg-white/10 px-5 py-2 text-sm text-white">
-              Camera preview
-            </span>
-          </div>
-
-          <div class="mt-5 grid grid-cols-2 gap-3">
-            <div class="h-14 rounded-2xl bg-white"></div>
-            <div class="h-14 rounded-2xl bg-lens-orange"></div>
-          </div>
-        </div>
-
-        <div class="rounded-[2rem] border border-stone-200 bg-lens-cream p-5 md:p-8">
-          <div class="mb-6 flex items-center justify-between">
-            <div class="h-7 w-44 rounded-lg bg-lens-teal"></div>
-            <div class="h-9 w-20 rounded-full bg-white"></div>
-          </div>
-
-          <div class="space-y-4">
-            <div class="rounded-2xl bg-white p-4">
-              <div class="grid grid-cols-[42px_1fr_auto] items-center gap-3">
-                <div class="h-10 w-10 rounded-xl border border-stone-300"></div>
-                <div class="space-y-2">
-                  <div class="h-4 w-36 rounded bg-lens-teal"></div>
-                  <div class="h-3 w-24 rounded bg-stone-200"></div>
-                </div>
-                <div class="h-8 w-16 rounded-full bg-lens-pale"></div>
-              </div>
+        <div class="scan-layout">
+          <div class="camera-panel">
+            <div class="camera-frame">
+              Camera preview of a yoghurt tub ingredients list
             </div>
-
-            <div class="rounded-2xl bg-white p-4">
-              <div class="grid grid-cols-[42px_1fr_auto] items-center gap-3">
-                <div class="h-10 w-10 rounded-xl border border-stone-300"></div>
-                <div class="space-y-2">
-                  <div class="h-4 w-44 rounded bg-lens-teal"></div>
-                  <div class="h-3 w-28 rounded bg-stone-200"></div>
-                </div>
-                <div class="h-8 w-16 rounded-full bg-lens-pale"></div>
-              </div>
-            </div>
-
-            <div class="rounded-2xl bg-white p-4">
-              <div class="grid grid-cols-[42px_1fr_auto] items-center gap-3">
-                <div class="h-10 w-10 rounded-xl border border-stone-300"></div>
-                <div class="space-y-2">
-                  <div class="h-4 w-32 rounded bg-lens-teal"></div>
-                  <div class="h-3 w-20 rounded bg-stone-200"></div>
-                </div>
-                <div class="h-8 w-16 rounded-full bg-lens-pale"></div>
-              </div>
+            <div class="camera-actions">
+              <a class="btn btn-secondary" href="index.html">Cancel</a>
+              <span class="btn btn-primary">Capture</span>
             </div>
           </div>
 
-          <div class="mt-6 h-14 rounded-2xl border border-stone-300 bg-white"></div>
-
-          <div class="mt-4 grid gap-3 sm:grid-cols-2">
-            <div class="h-14 rounded-2xl border border-lens-teal"></div>
-            <a href="additive-results.html" class="flex h-14 items-center justify-center rounded-2xl bg-lens-teal text-sm font-medium text-white">
-              Confirm
-            </a>
+          <div class="confirm-panel">
+            <h2>Detected on this label</h2>
+            <p>Sample scan: Valley Farm Natural Yoghurt, 700g.</p>
+            <div class="additive-list">
+              <div class="additive-item">
+                <strong>Milk solids</strong>
+                <span>Base ingredient — not an additive</span>
+              </div>
+              <div class="additive-item">
+                <strong>E1442 — hydroxypropyl distarch phosphate</strong>
+                <span>Thickener used to keep yoghurt creamy</span>
+                <span class="tag">Review</span>
+              </div>
+              <div class="additive-item">
+                <strong>E440 — pectin</strong>
+                <span>Plant fibre used as a gelling agent</span>
+                <span class="tag">Common</span>
+              </div>
+            </div>
+            <div class="confirm-actions">
+              <a class="btn btn-secondary" href="index.html">Rescan</a>
+              <a class="btn btn-solid" href="additive-results.html">Confirm scan</a>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="border-t border-stone-200 px-5 py-8 md:px-10">
-      <div class="grid gap-8 md:grid-cols-4">
-        <div class="space-y-3">
-          <div class="h-9 w-28 rounded-lg bg-lens-teal"></div>
-          <div class="h-3 w-full rounded bg-stone-200"></div>
-          <div class="h-3 w-2/3 rounded bg-stone-200"></div>
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <h3>LabelLens</h3>
+          <p>A student project for decoding packaged food labels.</p>
         </div>
-        <div class="space-y-3">
-          <div class="h-4 w-20 rounded bg-stone-300"></div>
-          <div class="h-3 w-24 rounded bg-stone-200"></div>
-          <div class="h-3 w-20 rounded bg-stone-200"></div>
+        <div>
+          <h3>Explore</h3>
+          <p><a href="index.html">Home</a></p>
+          <p><a href="scan-confirm.html">Scan a label</a></p>
         </div>
-        <div class="space-y-3">
-          <div class="h-4 w-20 rounded bg-stone-300"></div>
-          <div class="h-3 w-24 rounded bg-stone-200"></div>
-          <div class="h-3 w-20 rounded bg-stone-200"></div>
+        <div>
+          <h3>Results</h3>
+          <p><a href="additive-results.html">Compare additives</a></p>
         </div>
-        <div class="space-y-3">
-          <div class="h-4 w-20 rounded bg-stone-300"></div>
-          <div class="h-10 w-full rounded-full border border-stone-300"></div>
+        <div>
+          <h3>Note</h3>
+          <p>Information on this site is fictional study content, not medical advice.</p>
         </div>
       </div>
     </footer>
