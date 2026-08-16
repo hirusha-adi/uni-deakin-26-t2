@@ -18,7 +18,7 @@ html {
 
 body {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   background-color: var(--cream);
   color: var(--ink);
   line-height: 1.5;
@@ -59,22 +59,19 @@ main > section {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
 }
 
 .logo {
   width: 2.5rem;
   height: 2.5rem;
-  border-radius: 0.75rem;
-  background-color: var(--teal);
+  object-fit: contain;
 }
 
 .site-nav {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.95rem;
 }
 
@@ -84,13 +81,17 @@ main > section {
 }
 
 .btn {
-  display: inline-block;
-  font-family: Arial, Helvetica, sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0.95rem;
   font-weight: 700;
+  line-height: 1;
   text-align: center;
+  border: 0;
   border-radius: 999rem;
   padding: 0.75rem 1.5rem;
+  cursor: pointer;
 }
 
 .btn-primary {
@@ -124,14 +125,12 @@ main > section {
   overflow: hidden;
 }
 
-.hero-copy,
-.hero-visual {
+.hero-copy {
   padding: 1.5rem;
 }
 
 .kicker {
   display: inline-block;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -142,7 +141,6 @@ main > section {
 h1,
 h2,
 h3 {
-  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.2;
   margin: 0 0 0.75rem;
 }
@@ -174,18 +172,14 @@ p {
 .hero-visual {
   min-height: 14rem;
   background-color: var(--teal);
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
 }
 
-.hero-visual span {
-  border: 0.125rem dashed rgba(255, 255, 255, 0.5);
-  border-radius: 1.25rem;
-  padding: 2rem 1.25rem;
+.hero-visual img {
+  display: block;
   width: 100%;
+  height: 100%;
+  min-height: 14rem;
+  object-fit: cover;
 }
 
 .search-box,
@@ -203,6 +197,41 @@ p {
   background-color: var(--cream);
 }
 
+.search-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.search-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.search-row input {
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--ink);
+  background-color: var(--white);
+  border: 0.0625rem solid var(--line);
+  border-radius: 999rem;
+  padding: 0.75rem 1.1rem;
+}
+
+.search-row input:focus {
+  outline: 0.125rem solid var(--teal);
+  outline-offset: 0.125rem;
+}
+
+.search-hint {
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
 .chip-row,
 .additive-list {
   display: flex;
@@ -215,7 +244,6 @@ p {
   background-color: var(--white);
   border-radius: 0.75rem;
   padding: 0.75rem 1rem;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .feature-card {
@@ -314,21 +342,31 @@ p {
     align-items: stretch;
   }
 
-  .hero-copy,
-  .hero-visual {
+  .hero-copy {
     width: 50%;
     padding: 3rem;
   }
 
   .hero-visual {
+    width: 50%;
+    min-height: 22rem;
+  }
+
+  .hero-visual img {
     min-height: 22rem;
   }
 
   .hero-actions,
   .camera-actions,
-  .confirm-actions {
+  .confirm-actions,
+  .search-row {
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .search-row input {
+    flex: 1;
   }
 
   .feature-grid,
