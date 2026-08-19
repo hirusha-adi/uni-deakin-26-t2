@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VPS Hardening Overview</title>
+    <link rel="stylesheet" href="styles-2.css">
+</head>
+<body>
+    <div class="container">
+
+        <header>
+            <div class="titlebar">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="path">~/blog/vps-hardening-overview.md</span>
+            </div>
+            <h1>An Overview of Linux Hardening for a VPS</h1>
+            <p class="subtitle">Notes on locking down a Debian VPS. This is not a step by step guide, it's just the surface-level ideas worth knowing</p>
+        </header>
+
+        <nav>
+            <a href="#users">users</a>
+            <a href="#ssh">ssh</a>
+            <a href="#fail2ban">fail2ban</a>
+            <a href="#firewall">firewall</a>
+            <a href="#credentials">credentials</a>
+            <a href="#trust">trust</a>
+        </nav>
+
+        <main class="clearfix">
+
+            <div class="column side toc">
+                <h2>On this page</h2>
+                <ul>
+                    <li><a href="#users">1. Base OS &amp; users</a></li>
+                    <li><a href="#ssh">2. SSH access</a></li>
+                    <li><a href="#fail2ban">3. fail2ban</a></li>
+                    <li><a href="#updates">4. Auto updates</a></li>
+                    <li><a href="#firewall">5. Firewall</a></li>
+                    <li><a href="#credentials">6. Credentials &amp; logs</a></li>
+                    <li><a href="#paranoid">7. Locking down SSH further</a></li>
+                    <li><a href="#trust">8. Trust nothing</a></li>
+                </ul>
+            </div>
+
+            <div class="column main-content">
+
+                <p>
+                    There's a backstory behind this post but publicly sharing it is not the
+                    greatest idea. This covers some interesting hardening ideas to protect your
+                    VPS. It's not a step by step guide - more an overview of things worth
+                    doing. Everything here is surface level; each point is its own rabbit hole.
+                </p>
+                <p>
+                    This is written with a Debian server in mind. If Debian isn't your thing,
+                    AlmaLinux is a solid Red Hat based alternative - it even ships with
+                    SELinux set to <code>default-deny</code> out of the box.
+                </p>
+
+                <h2 id="users">1. Base OS &amp; users</h2>
+                <p>
+                    Start by updating everything to the latest version. Create a non-root user
+                    and add them to the sudoers file. If a service is running outside Docker,
+                    give it its own dedicated account, and set the shell to <code>nologin</code>
+                    where possible. Planning to use Docker? Set it up rootless.
+                </p>
+                <p>
+                    Set the system's timezone properly, then install and configure
+                    <code>haveged</code>. It tops up the entropy pool so the system can generate
+                    random data more efficiently and securely.
+                </p>
+
+                <h2 id="ssh">2. SSH access</h2>
+                <p>
+                    Disable root login over SSH. Move the daemon off port 22 (and off 2222 -
+                    everyone tries that one too) just to fall off automated scanners' radar. For
+                    now, only allow public key authentication, and explicitly allow users by
+                    username rather than leaving it open. Turn off anything in the SSH config you
+                    aren't actually using.
+                </p>
+
+                <h2 id="fail2ban">3. fail2ban</h2>
+                <p>
+                    Set up <code>fail2ban</code> and turn on the SSH jail. You can write custom
+                    filters and point it at any other service you run, as long as that service
+                    logs to a file.
+                </p>
+
+                <h2 id="updates">4. Automatic updates</h2>
+                <p>
+                    Turning on automatic security updates is generally a good idea. One thing a
+                    lot of guides skip: set the correct default security origin, or the updates
+                    silently won't apply. If you need 100% uptime this is worth thinking twice
+                    about, though the odds of an update actually forcing a restart are low.
+                </p>
+
+                <h2 id="firewall">5. Firewall</h2>
+                <p>
+                    Default-deny, then explicitly open the services you want public. Running
+                    Docker? Trust the Docker interface fully - restricting it breaks
+                    inter-container communication and a lot else. <code>ufw</code> tends to be a
+                    bit too simple for that balance, so on Debian reach for <code>iptables</code>
+                    directly, or <code>firewalld</code> on Red Hat based systems. If you don't use
+                    IPv6, disable it at the firewall (preferred) or via kernel parameters.
+                </p>
+
+                <h2 id="credentials">6. Credentials &amp; logs</h2>
+                <p>
+                    Keep credentials in their own directory with tight permissions - a
+                    dedicated group or ACLs both work, pick whichever fits. Point applications at
+                    files in that directory rather than passing secrets around directly.
+                </p>
+                <p>
+                    Outside Docker, set up proper logging with <code>journald</code>, install
+                    <code>logrotate</code> so logs don't grow forever, and back up to a server you
+                    trust with something like <code>rsync</code>.
+                </p>
+
+                <h2 id="paranoid">7. Locking down SSH further</h2>
+                <p>Two options if you want to go further on SSH access specifically:</p>
+                <ul>
+                    <li>Static IP: only allow SSH traffic from that one address.</li>
+                    <li>No static IP: put the server on a Tailscale network and restrict SSH to
+                        that network in the firewall. This adds Tailscale itself as a new attack
+                        surface, but it still beats leaving SSH open to the whole internet.</li>
+                </ul>
+                <p>
+                    Beyond that, look at pluggable authentication modules (PAM) - Google
+                    Authenticator or a YubiKey PAM module - for a second factor on shell
+                    access.
+                </p>
+
+                <h2 id="trust">8. Trust nothing</h2>
+                <p>
+                    Whatever you're installing, get it from the correct source if it isn't in
+                    Debian's official repos, and validate it. Don't run a random install script
+                    off GitHub unless you've actually read through it and understand what it
+                    does.
+                </p>
+                <p>
+                    The underlying idea is zero trust from the ground up - trust nothing by
+                    default, and enable exactly what you've verified.
+                </p>
+
+            </div>
+
+            <div class="column side specs">
+                <h2>Article info</h2>
+                <table class="spec-table">
+                    <tbody>
+                        <tr><td>Author</td><td>Hirusha</td></tr>
+                        <tr><td>Published</td><td>2026-02-08</td></tr>
+                        <tr><td>Tags</td><td>linux, vps, security, hardening</td></tr>
+                    </tbody>
+                </table>
+
+                <h2>Quick checklist</h2>
+                <ul class="checklist">
+                    <li>Non-root sudo user</li>
+                    <li>Root SSH login off</li>
+                    <li>SSH port moved, keys only</li>
+                    <li>fail2ban on SSH jail</li>
+                    <li>Auto security updates</li>
+                    <li>Default-deny firewall</li>
+                    <li>Credentials dir, tight perms</li>
+                    <li>logrotate + offsite backups</li>
+                    <li>PAM second factor</li>
+                </ul>
+            </div>
+
+        </main>
+
+        <footer>
+            <p>
+                Based on this post on my blog -
+                <a href="https://github.com/hirusha-adi/informaticc-blog/blob/main/blog/2026-02-08-vps-hardening-overview/index.md" target="_blank" rel="noopener">informaticc-blog: vps-hardening-overview</a>
+            </p>
+        </footer>
+
+    </div>
+</body>
+</html>
