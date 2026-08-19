@@ -147,6 +147,7 @@ footer {
 
 @media screen and (max-width: 767px) {
     .column,
+    .column.side,
     .main-content {
         float: none;
         width: 100%;
