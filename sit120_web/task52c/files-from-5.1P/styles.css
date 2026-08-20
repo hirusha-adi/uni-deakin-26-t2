@@ -1,3 +1,4 @@
+/* Colour palette, reused everywhere via var() */
 :root {
   --teal: #155e63;
   --cream: #f6f3ea;
@@ -8,10 +9,12 @@
   --line: #e7e5e4;
 }
 
+/* Predictable box sizing for all elements */
 * {
   box-sizing: border-box;
 }
 
+/* Base font-size = browser default, so rem scales with user settings */
 html {
   font-size: 100%;
 }
@@ -24,16 +27,19 @@ body {
   line-height: 1.5;
 }
 
+/* Links plain by default, styled per-context (nav, buttons) instead */
 a {
   color: inherit;
   text-decoration: none;
 }
 
+/* Images never overflow their container */
 img {
   max-width: 100%;
   height: auto;
 }
 
+/* Page shell: centred column, capped width on large screens */
 .site {
   width: 100%;
   max-width: 70rem;
@@ -48,6 +54,7 @@ main > section {
   padding: 1.25rem;
 }
 
+/* Header: mobile-first, wraps so the nav can drop to its own row */
 .site-header {
   display: flex;
   flex-wrap: wrap;
@@ -57,6 +64,7 @@ main > section {
   border-bottom: 0.0625rem solid var(--line);
 }
 
+/* Logo + wordmark, reused in header and footer */
 .brand {
   display: flex;
   align-items: center;
@@ -70,6 +78,7 @@ main > section {
   object-fit: contain;
 }
 
+/* Hamburger toggle: checkbox hack, no JS needed */
 .nav-toggle-checkbox {
   position: absolute;
   opacity: 0;
@@ -93,6 +102,7 @@ main > section {
   background-color: var(--teal);
 }
 
+/* Nav starts collapsed on mobile; sits full-width below the header row */
 .site-nav {
   order: 3;
   flex-basis: 100%;
@@ -105,15 +115,18 @@ main > section {
   transition: max-height 0.25s ease;
 }
 
+/* Checking the hidden checkbox expands the nav (sibling selector) */
 .nav-toggle-checkbox:checked ~ .site-nav {
   max-height: 20rem;
 }
 
+/* Highlight the hovered link and whichever page is currently open */
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
   color: var(--orange);
 }
 
+/* Base button shape; colour/fill comes from the modifier classes below */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -128,21 +141,25 @@ main > section {
   cursor: pointer;
 }
 
+/* Loud call-to-action, e.g. "Scan a label" */
 .btn-primary {
   background-color: var(--orange);
   color: var(--white);
 }
 
+/* Quiet outline button for secondary actions */
 .btn-secondary {
   border: 0.125rem solid var(--teal);
   background-color: transparent;
 }
 
+/* Solid teal fill, used for form submits and confirmations */
 .btn-solid {
   background-color: var(--teal);
   color: var(--white);
 }
 
+/* Shared mobile default for every multi-item layout block: stacked column */
 .hero,
 .scan-layout,
 .results-grid,
@@ -153,6 +170,7 @@ main > section {
   gap: 1.25rem;
 }
 
+/* Homepage banner: copy block stacked above the photo on mobile */
 .hero {
   background-color: var(--pale);
   border-radius: 0.25rem;
@@ -163,6 +181,7 @@ main > section {
   padding: 1.5rem;
 }
 
+/* Small uppercase eyebrow label above a heading */
 .kicker {
   display: inline-block;
   font-size: 0.75rem;
@@ -179,6 +198,7 @@ h3 {
   margin: 0 0 0.75rem;
 }
 
+/* Fluid heading: scales with viewport width between the two rem limits */
 h1 {
   font-size: clamp(1.75rem, 1.2rem + 2.5vw, 3rem);
   color: var(--teal);
@@ -203,6 +223,7 @@ p {
   gap: 0.75rem;
 }
 
+/* Teal fallback shows while the hero photo loads */
 .hero-visual {
   min-height: 14rem;
   background-color: var(--teal);
@@ -216,6 +237,7 @@ p {
   object-fit: cover;
 }
 
+/* Shared card look for search box, panels, and cards */
 .search-box,
 .confirm-panel,
 .result-card,
@@ -231,6 +253,7 @@ p {
   background-color: var(--cream);
 }
 
+/* Visually-present label above the search input */
 .search-label {
   display: block;
   font-size: 0.85rem;
@@ -238,6 +261,7 @@ p {
   margin-bottom: 0.5rem;
 }
 
+/* Input + submit button stack on mobile, sit side by side from 48rem */
 .search-row {
   display: flex;
   flex-direction: column;
@@ -266,6 +290,7 @@ p {
   margin-bottom: 0.75rem;
 }
 
+/* Suggested-search chips and the scanned-additive list share a stacked layout */
 .chip-row,
 .additive-list {
   display: flex;
@@ -286,6 +311,7 @@ p {
   border: 0;
 }
 
+/* Square icon tile shown at the top of each feature card */
 .icon {
   display: flex;
   align-items: center;
@@ -302,6 +328,7 @@ p {
   font-size: 1.25rem;
 }
 
+/* Scan page: intro row above the camera + confirm-list layout */
 .scan-intro {
   display: flex;
   flex-direction: column;
@@ -309,6 +336,7 @@ p {
   margin-bottom: 1.25rem;
 }
 
+/* Step-progress pills (1 of 2, 2 of 2) */
 .scan-steps {
   display: flex;
   gap: 0.5rem;
@@ -325,6 +353,7 @@ p {
   background-color: var(--teal);
 }
 
+/* Dark panel holding the live camera preview */
 .camera-panel {
   background-color: var(--teal);
   color: var(--white);
@@ -349,6 +378,7 @@ p {
   object-fit: cover;
 }
 
+/* Overlay prompt shown until the camera stream starts playing */
 .camera-overlay {
   position: absolute;
   inset: 0;
@@ -373,6 +403,7 @@ p {
   padding: 0.5rem 1.25rem;
 }
 
+/* Cancel/Capture and Rescan/Confirm rows: equal-width buttons side by side */
 .camera-actions,
 .confirm-actions {
   display: flex;
@@ -400,6 +431,7 @@ p {
   color: var(--white);
 }
 
+/* Panel listing what the scan detected, next to the camera */
 .confirm-panel {
   background-color: var(--cream);
 }
@@ -416,6 +448,7 @@ p {
   margin: 0;
 }
 
+/* One detected additive row: icon, name + note, status tag */
 .additive-item {
   display: flex;
   align-items: center;
@@ -442,6 +475,7 @@ p {
   gap: 0.2rem;
 }
 
+/* Optional free-text note the shopper can add to a scan */
 .confirm-note {
   display: block;
   width: 100%;
@@ -454,6 +488,7 @@ p {
   font: inherit;
 }
 
+/* Small status pill, e.g. "Thickener" or "Review" */
 .tag {
   font-size: 0.8rem;
   background-color: var(--pale);
@@ -467,6 +502,7 @@ p {
   margin-bottom: 1rem;
 }
 
+/* Four-column link/info block, stacked on mobile, in a row from 48rem */
 .site-footer {
   border-top: 0.0625rem solid var(--line);
   font-size: 0.9rem;
@@ -476,6 +512,7 @@ p {
   margin: 0 0 0.5rem;
 }
 
+/* Responsive table: scrolls sideways instead of squashing columns */
 .table-scroll {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -515,6 +552,7 @@ p {
   background-color: var(--pale);
 }
 
+/* Breakpoint 1 (tablet/desktop, >=48rem): nav goes inline, grids kick in */
 @media (min-width: 48rem) {
   .site-header,
   .site-footer,
@@ -586,6 +624,7 @@ p {
     flex: 1;
   }
 
+  /* Switch from stacked flex to a 3-column CSS Grid */
   .feature-grid,
   .results-grid {
     display: grid;
@@ -601,6 +640,7 @@ p {
   }
 }
 
+/* Breakpoint 2 (wide desktop, >=64rem): roomier hero split and spacing */
 @media (min-width: 64rem) {
   .site {
     max-width: 80rem;
