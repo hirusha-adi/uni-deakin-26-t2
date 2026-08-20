@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Compare food additive results across scanned products and revisit additives you have looked up before with LabelLens.">
   <title>LabelLens - Compare</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,6 +11,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <div class="site">
     <header class="site-header">
       <a class="brand" href="index.html">
@@ -27,10 +29,10 @@
       </nav>
     </header>
 
-    <main>
-      <section>
+    <main id="main">
+      <section aria-labelledby="results-heading">
         <p class="kicker">Results</p>
-        <h1>Additives on this yoghurt scan</h1>
+        <h1 id="results-heading">Additives on this yoghurt scan</h1>
         <p>
           These notes are written for everyday shoppers. They describe typical uses
           of each additive, not a personal health assessment.
@@ -40,8 +42,8 @@
         </p>
       </section>
 
-      <section>
-        <h2>Side-by-side additive cards</h2>
+      <section aria-labelledby="cards-heading">
+        <h2 id="cards-heading">Side-by-side additive cards</h2>
         <div class="results-grid">
           <article class="result-card">
             <h3>E1442</h3>
@@ -84,8 +86,8 @@
         </div>
       </section>
 
-      <section>
-        <h2>Compare across scanned products</h2>
+      <section aria-labelledby="compare-heading">
+        <h2 id="compare-heading">Compare across scanned products</h2>
         <p>
           Every scan is added to your product log. This table lines up four
           yoghurt tubs so you can see how their additive lists differ at a
@@ -135,6 +137,28 @@
             </tbody>
           </table>
         </div>
+      </section>
+
+      <section aria-labelledby="saved-heading">
+        <h2 id="saved-heading">Saved for later</h2>
+        <p>
+          Additives you have already looked up stay in your list so you do not
+          have to search for them again on your next shop.
+        </p>
+        <ul class="saved-list">
+          <li>
+            <span class="saved-name">E202 - potassium sorbate</span>
+            <span class="tag">Preservative</span>
+          </li>
+          <li>
+            <span class="saved-name">E160a - carotene</span>
+            <span class="tag">Colour</span>
+          </li>
+          <li>
+            <span class="saved-name">E621 - monosodium glutamate</span>
+            <span class="tag">Flavour enhancer</span>
+          </li>
+        </ul>
       </section>
     </main>
 

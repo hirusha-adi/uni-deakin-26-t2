@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Scan a packaged food label with LabelLens and confirm the detected additives before viewing results.">
   <title>LabelLens - Scan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,6 +12,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <div class="site">
     <header class="site-header">
       <a class="brand" href="index.html">
@@ -28,12 +30,12 @@
       </nav>
     </header>
 
-    <main>
-      <section>
+    <main id="main">
+      <section aria-labelledby="scan-heading">
         <div class="scan-intro">
           <div>
             <p class="kicker">Camera workflow</p>
-            <h1>Scan and confirm the ingredients</h1>
+            <h1 id="scan-heading">Scan and confirm the ingredients</h1>
             <p>
               Hold the pack steady so the ingredients panel fills the frame. After the
               photo is taken, check each detected additive before you open the results.
@@ -92,7 +94,8 @@
                 <span class="tag">Common</span>
               </div>
             </div>
-            <input class="confirm-note" type="text" placeholder="Add a note about this scan">
+            <label class="confirm-note-label" for="scan-note">Note for this scan (optional)</label>
+            <input class="confirm-note" id="scan-note" type="text" placeholder="e.g. bought for a family member with a sensitivity">
             <div class="confirm-actions">
               <a class="btn btn-secondary" href="scan-confirm.html">Rescan</a>
               <a class="btn btn-solid" href="additive-results.html">Confirm</a>

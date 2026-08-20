@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LabelLens helps Australian shoppers scan, search, and compare packaged food additives before they buy.">
   <title>LabelLens - Home</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,6 +12,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <div class="site">
     <header class="site-header">
       <a class="brand" href="index.html">
@@ -28,12 +30,12 @@
       </nav>
     </header>
 
-    <main>
-      <section class="hero-wrap">
+    <main id="main">
+      <section class="hero-wrap" aria-labelledby="hero-heading">
         <div class="hero">
           <div class="hero-copy">
             <p class="kicker">Food label decoder</p>
-            <h1>Read the label. Understand every additive.</h1>
+            <h1 id="hero-heading">Read the label. Understand every additive.</h1>
             <p>
               LabelLens helps shoppers in Australia check ingredient lists, E-numbers,
               and processing aids before they put a product in the trolley.
@@ -49,10 +51,10 @@
         </div>
       </section>
 
-      <section id="search">
+      <section id="search" aria-labelledby="search-heading">
         <div class="search-box">
           <p class="kicker">Lookup</p>
-          <h2>Search by name or E-number</h2>
+          <h2 id="search-heading">Search by name or E-number</h2>
           <p>
             Type a code such as E211, or a common name such as sodium benzoate.
             LabelLens matches it to a short safety note and typical uses in packaged food.
@@ -78,8 +80,8 @@
         </div>
       </section>
 
-      <section>
-        <h2>How LabelLens helps</h2>
+      <section aria-labelledby="helps-heading">
+        <h2 id="helps-heading">How LabelLens helps</h2>
         <div class="feature-grid">
           <article class="feature-card">
             <div class="icon" aria-hidden="true">

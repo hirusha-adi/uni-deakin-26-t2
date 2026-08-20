@@ -39,6 +39,23 @@ img {
   height: auto;
 }
 
+/* Keyboard/screen-reader users can jump past the repeated nav straight to
+   the page content; hidden off-screen until it receives focus */
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: 0.5rem;
+  z-index: 10;
+  background-color: var(--teal);
+  color: var(--white);
+  padding: 0.6rem 1rem;
+  border-radius: 0.25rem;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
 /* Page shell: centred column, capped width on large screens */
 .site {
   width: 100%;
@@ -118,6 +135,14 @@ main > section {
 /* Checking the hidden checkbox expands the nav (sibling selector) */
 .nav-toggle-checkbox:checked ~ .site-nav {
   max-height: 20rem;
+}
+
+/* Users who have asked their OS to reduce motion get an instant toggle
+   instead of the sliding animation */
+@media (prefers-reduced-motion: reduce) {
+  .site-nav {
+    transition: none;
+  }
 }
 
 /* Highlight the hovered link and whichever page is currently open */
@@ -475,17 +500,52 @@ p {
   gap: 0.2rem;
 }
 
+/* Visible label for the note field: Madison-style users (moderate tech
+   literacy) need a real label, not just a placeholder that vanishes on focus */
+.confirm-note-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-top: 1.25rem;
+}
+
 /* Optional free-text note the shopper can add to a scan */
 .confirm-note {
   display: block;
   width: 100%;
   min-height: 3.5rem;
-  margin: 1.25rem 0 1rem;
+  margin: 0.5rem 0 1rem;
   padding: 0.75rem 1rem;
   border: 0.0625rem solid var(--line);
   border-radius: 0.25rem;
   background-color: var(--white);
   font: inherit;
+}
+
+/* Return-visit list on the results page: a plain stacked list is enough
+   since each row only needs a name and a status tag, no card padding */
+.saved-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.saved-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background-color: var(--cream);
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+}
+
+.saved-name {
+  font-weight: 700;
 }
 
 /* Small status pill, e.g. "Thickener" or "Review" */
