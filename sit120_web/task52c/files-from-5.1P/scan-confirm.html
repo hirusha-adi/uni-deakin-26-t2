@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LabelLens - Scan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <img class="logo" src="logo.png" alt="LabelLens">
+        LabelLens
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="scan-confirm.html" aria-current="page">Scan</a>
+        <a href="additive-results.html">Compare</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <div class="scan-intro">
+          <div>
+            <p class="kicker">Camera workflow</p>
+            <h1>Scan and confirm the ingredients</h1>
+            <p>
+              Hold the pack steady so the ingredients panel fills the frame. After the
+              photo is taken, check each detected additive before you open the results.
+            </p>
+          </div>
+          <div class="scan-steps" aria-hidden="true">
+            <span class="scan-step is-active"></span>
+            <span class="scan-step"></span>
+          </div>
+        </div>
+
+        <div class="scan-layout">
+          <div class="camera-panel">
+            <div class="camera-frame">
+              <video id="camera-preview" autoplay playsinline muted></video>
+              <div class="camera-overlay" id="camera-overlay">
+                <p id="camera-status">Allow camera access to preview the label</p>
+                <button class="btn btn-primary" type="button" id="enable-camera">Enable camera</button>
+              </div>
+            </div>
+            <div class="camera-actions">
+              <a class="btn btn-camera-cancel" href="index.html">Cancel</a>
+              <button class="btn btn-camera-capture" type="button">Capture</button>
+            </div>
+          </div>
+
+          <div class="confirm-panel">
+            <div class="confirm-head">
+              <h2>Detected on this label</h2>
+              <span class="tag">Sample</span>
+            </div>
+            <p>Sample scan: Valley Farm Natural Yoghurt, 700g.</p>
+            <div class="additive-list">
+              <div class="additive-item">
+                <span class="item-icon" aria-hidden="true"><i class="fa-solid fa-droplet"></i></span>
+                <span class="item-copy">
+                  <strong>Milk solids</strong>
+                  <span>Base ingredient - not an additive</span>
+                </span>
+                <span class="tag">Base</span>
+              </div>
+              <div class="additive-item">
+                <span class="item-icon" aria-hidden="true"><i class="fa-solid fa-flask"></i></span>
+                <span class="item-copy">
+                  <strong>E1442 - hydroxypropyl distarch phosphate</strong>
+                  <span>Thickener used to keep yoghurt creamy</span>
+                </span>
+                <span class="tag">Review</span>
+              </div>
+              <div class="additive-item">
+                <span class="item-icon" aria-hidden="true"><i class="fa-solid fa-leaf"></i></span>
+                <span class="item-copy">
+                  <strong>E440 - pectin</strong>
+                  <span>Plant fibre used as a gelling agent</span>
+                </span>
+                <span class="tag">Common</span>
+              </div>
+            </div>
+            <input class="confirm-note" type="text" placeholder="Add a note about this scan">
+            <div class="confirm-actions">
+              <a class="btn btn-secondary" href="scan-confirm.html">Rescan</a>
+              <a class="btn btn-solid" href="additive-results.html">Confirm</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <h3 class="brand">
+            <img class="logo" src="logo.png" alt="">
+            LabelLens
+          </h3>
+          <p>A student project for decoding packaged food labels.</p>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <p><a href="index.html">Home</a></p>
+          <p><a href="scan-confirm.html">Scan a label</a></p>
+        </div>
+        <div>
+          <h3>Results</h3>
+          <p><a href="additive-results.html">Compare additives</a></p>
+        </div>
+        <div>
+          <h3>Note</h3>
+          <p>Information on this site is fictional study content, not medical advice.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const video = document.getElementById("camera-preview");
+    const overlay = document.getElementById("camera-overlay");
+    const status = document.getElementById("camera-status");
+    const enableBtn = document.getElementById("enable-camera");
+
+    function hidePrompt() {
+      overlay.hidden = true;
+    }
+
+    async function startCamera() {
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        status.textContent = "This browser cannot open the camera.";
+        return;
+      }
+
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: { facingMode: { ideal: "environment" } },
+          audio: false
+        });
+        video.srcObject = stream;
+        video.addEventListener("playing", hidePrompt);
+        await video.play();
+        hidePrompt();
+      } catch (error) {
+        overlay.hidden = false;
+        status.textContent = "Camera permission is needed to show a live preview.";
+      }
+    }
+
+    enableBtn.addEventListener("click", startCamera);
+    startCamera();
+  </script>
+</body>
+</html>
