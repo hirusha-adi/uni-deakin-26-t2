@@ -89,7 +89,7 @@ main > section {
   line-height: 1;
   text-align: center;
   border: 0;
-  border-radius: 999rem;
+  border-radius: 0.25rem;
   padding: 0.75rem 1.5rem;
   cursor: pointer;
 }
@@ -121,7 +121,7 @@ main > section {
 
 .hero {
   background-color: var(--pale);
-  border-radius: 1.5rem;
+  border-radius: 0.25rem;
   overflow: hidden;
 }
 
@@ -189,7 +189,7 @@ p {
 .camera-panel {
   background-color: var(--white);
   border: 0.0625rem solid var(--line);
-  border-radius: 1.25rem;
+  border-radius: 0.25rem;
   padding: 1.25rem;
 }
 
@@ -218,7 +218,7 @@ p {
   color: var(--ink);
   background-color: var(--white);
   border: 0.0625rem solid var(--line);
-  border-radius: 999rem;
+  border-radius: 0.25rem;
   padding: 0.75rem 1.1rem;
 }
 
@@ -242,7 +242,8 @@ p {
 .chip,
 .additive-item {
   background-color: var(--white);
-  border-radius: 0.75rem;
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
   padding: 0.75rem 1rem;
 }
 
@@ -257,7 +258,7 @@ p {
   justify-content: center;
   width: 3rem;
   height: 3rem;
-  border-radius: 0.85rem;
+  border-radius: 0.25rem;
   background-color: var(--pale);
   color: var(--teal);
   margin-bottom: 1rem;
@@ -294,18 +295,17 @@ p {
   background-color: var(--teal);
   color: var(--white);
   border: 0;
-  border-radius: 2rem;
+  border-radius: 0.25rem;
   padding: 1.25rem;
 }
 
 .camera-frame {
   position: relative;
   min-height: 20rem;
-  border: 0.125rem dashed rgba(255, 255, 255, 0.5);
-  border-radius: 1.5rem;
+  border: 0.125rem solid var(--white);
+  border-radius: 0.25rem;
   overflow: hidden;
   margin-bottom: 1.25rem;
-  background-color: rgba(255, 255, 255, 0.08);
 }
 
 .camera-frame video {
@@ -333,23 +333,27 @@ p {
 
 .camera-overlay p {
   margin: 0;
-  background-color: rgba(255, 255, 255, 0.12);
-  border-radius: 999rem;
+  background-color: var(--white);
+  color: var(--teal);
+  border-radius: 0.25rem;
   padding: 0.5rem 1.25rem;
 }
 
 .camera-actions,
 .confirm-actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 0.75rem;
+}
+
+.camera-actions .btn,
+.confirm-actions .btn {
+  flex: 1;
+  min-height: 3.5rem;
 }
 
 .btn-camera-cancel,
 .btn-camera-capture {
-  width: 100%;
-  min-height: 3.5rem;
-  border-radius: 1rem;
+  border-radius: 0.25rem;
 }
 
 .btn-camera-cancel {
@@ -364,7 +368,6 @@ p {
 
 .confirm-panel {
   background-color: var(--cream);
-  border-radius: 2rem;
 }
 
 .confirm-head {
@@ -380,8 +383,7 @@ p {
 }
 
 .additive-item {
-  display: grid;
-  grid-template-columns: 2.6rem 1fr auto;
+  display: flex;
   align-items: center;
   gap: 0.75rem;
 }
@@ -390,10 +392,11 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   width: 2.5rem;
   height: 2.5rem;
   border: 0.0625rem solid var(--line);
-  border-radius: 0.75rem;
+  border-radius: 0.25rem;
   background-color: var(--white);
   color: var(--teal);
 }
@@ -401,6 +404,7 @@ p {
 .item-copy {
   display: flex;
   flex-direction: column;
+  flex: 1;
   gap: 0.2rem;
 }
 
@@ -411,22 +415,16 @@ p {
   margin: 1.25rem 0 1rem;
   padding: 0.75rem 1rem;
   border: 0.0625rem solid var(--line);
-  border-radius: 1rem;
+  border-radius: 0.25rem;
   background-color: var(--white);
   font: inherit;
-}
-
-.confirm-actions .btn {
-  width: 100%;
-  min-height: 3.5rem;
-  border-radius: 1rem;
 }
 
 .tag {
   font-size: 0.8rem;
   background-color: var(--pale);
   color: var(--teal);
-  border-radius: 999rem;
+  border-radius: 0.25rem;
   padding: 0.25rem 0.7rem;
   width: fit-content;
 }
