@@ -16,6 +16,10 @@
         <img class="logo" src="logo.png" alt="LabelLens">
         LabelLens
       </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </label>
       <nav class="site-nav" aria-label="Main">
         <a href="index.html">Home</a>
         <a href="scan-confirm.html">Scan</a>
@@ -77,6 +81,59 @@
               cultures rather than processing additives.
             </p>
           </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Compare across scanned products</h2>
+        <p>
+          Every scan is added to your product log. This table lines up four
+          yoghurt tubs so you can see how their additive lists differ at a
+          glance. Swipe or scroll sideways on a small screen to see every column.
+        </p>
+        <div class="table-scroll">
+          <table class="compare-table">
+            <caption>Additive summary for four scanned yoghurt products</caption>
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Serving size</th>
+                <th scope="col">Key additive</th>
+                <th scope="col">Category</th>
+                <th scope="col">Shopper note</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Valley Farm Natural Yoghurt</td>
+                <td>700g</td>
+                <td>E1442</td>
+                <td>Thickener</td>
+                <td>Modified starch keeps the tub smooth in the fridge</td>
+              </tr>
+              <tr>
+                <td>Sunrise Greek Style Yoghurt</td>
+                <td>500g</td>
+                <td>E440</td>
+                <td>Gelling agent</td>
+                <td>Uses fruit pectin instead of a synthetic thickener</td>
+              </tr>
+              <tr>
+                <td>Meadow Light Yoghurt</td>
+                <td>1kg</td>
+                <td>E202</td>
+                <td>Preservative</td>
+                <td>Potassium sorbate extends shelf life after opening</td>
+              </tr>
+              <tr>
+                <td>Home-set Style Yoghurt</td>
+                <td>400g</td>
+                <td>None listed</td>
+                <td>No additive</td>
+                <td>Just milk and live cultures on the label</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
     </main>

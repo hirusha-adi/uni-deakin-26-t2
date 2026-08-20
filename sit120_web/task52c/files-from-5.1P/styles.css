@@ -50,7 +50,9 @@ main > section {
 
 .site-header {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   gap: 1rem;
   border-bottom: 0.0625rem solid var(--line);
 }
@@ -68,11 +70,43 @@ main > section {
   object-fit: contain;
 }
 
+.nav-toggle-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-toggle-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.nav-toggle-label span {
+  display: block;
+  height: 0.1875rem;
+  border-radius: 999rem;
+  background-color: var(--teal);
+}
+
 .site-nav {
+  order: 3;
+  flex-basis: 100%;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   font-size: 0.95rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+}
+
+.nav-toggle-checkbox:checked ~ .site-nav {
+  max-height: 20rem;
 }
 
 .site-nav a:hover,
@@ -146,7 +180,7 @@ h3 {
 }
 
 h1 {
-  font-size: 1.75rem;
+  font-size: clamp(1.75rem, 1.2rem + 2.5vw, 3rem);
   color: var(--teal);
 }
 
@@ -442,6 +476,45 @@ p {
   margin: 0 0 0.5rem;
 }
 
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
+}
+
+.compare-table {
+  width: 100%;
+  min-width: 40rem;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.compare-table caption {
+  text-align: left;
+  font-weight: 700;
+  color: var(--teal);
+  background-color: var(--pale);
+  padding: 0.75rem 1rem;
+}
+
+.compare-table th,
+.compare-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 0.0625rem solid var(--line);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.compare-table thead th {
+  background-color: var(--cream);
+  color: var(--teal);
+}
+
+.compare-table tbody tr:nth-child(even) {
+  background-color: var(--pale);
+}
+
 @media (min-width: 48rem) {
   .site-header,
   .site-footer,
@@ -455,14 +528,18 @@ p {
     align-items: center;
   }
 
+  .nav-toggle-label {
+    display: none;
+  }
+
   .site-nav {
+    order: 0;
+    flex-basis: auto;
     flex-direction: row;
     align-items: center;
     gap: 1.75rem;
-  }
-
-  h1 {
-    font-size: 2.5rem;
+    max-height: none;
+    overflow: visible;
   }
 
   .scan-intro {
@@ -521,5 +598,35 @@ p {
 
   .footer-grid > * {
     width: 25%;
+  }
+}
+
+@media (min-width: 64rem) {
+  .site {
+    max-width: 80rem;
+  }
+
+  .site-header,
+  .site-footer,
+  main > section {
+    padding: 2rem 3rem;
+  }
+
+  .hero-copy {
+    width: 45%;
+    padding: 4rem;
+  }
+
+  .hero-visual {
+    width: 55%;
+  }
+
+  .feature-grid,
+  .results-grid {
+    gap: 2rem;
+  }
+
+  .compare-table {
+    font-size: 1rem;
   }
 }
