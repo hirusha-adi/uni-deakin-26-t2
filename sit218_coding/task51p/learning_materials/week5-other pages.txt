@@ -1,0 +1,2 @@
+- https://techofide.com/blogs/advanced-sql-injection-attack-sqli-blind-sql-injection-and-prevention/#What%20is%20Blind%20SQL%20Injection?
+- https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html
