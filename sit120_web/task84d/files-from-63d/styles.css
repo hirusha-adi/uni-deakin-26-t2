@@ -1,0 +1,911 @@
+/* Colour palette, reused everywhere via var() */
+:root {
+  --teal: #155e63;
+  --cream: #f6f3ea;
+  --orange: #b64900;
+  --ink: #17383a;
+  --pale: #e5efec;
+  --white: #ffffff;
+  --line: #e7e5e4;
+}
+
+/* Predictable box sizing for all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Base font-size = browser default, so rem scales with user settings */
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  background-color: var(--cream);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* Links plain by default, styled per-context (nav, buttons) instead */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Images never overflow their container */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Keyboard/screen-reader users can jump past the repeated nav straight to
+   the page content; hidden off-screen until it receives focus */
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: 0.5rem;
+  z-index: 10;
+  background-color: var(--teal);
+  color: var(--white);
+  padding: 0.6rem 1rem;
+  border-radius: 0.25rem;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+/* Page shell: centred column, capped width on large screens */
+.site {
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+  background-color: var(--white);
+  min-height: 100vh;
+}
+
+.site-header,
+.site-footer,
+main > section {
+  padding: 1.25rem;
+}
+
+/* Header: mobile-first, wraps so the nav can drop to its own row */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 0.0625rem solid var(--line);
+}
+
+/* Logo + wordmark, reused in header and footer */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+}
+
+.logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+}
+
+/* Hamburger toggle: checkbox hack, no JS needed */
+.nav-toggle-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-toggle-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.nav-toggle-label span {
+  display: block;
+  height: 0.1875rem;
+  border-radius: 999rem;
+  background-color: var(--teal);
+}
+
+/* Nav starts collapsed on mobile; sits full-width below the header row */
+.site-nav {
+  order: 3;
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+}
+
+/* Checking the hidden checkbox expands the nav (sibling selector) */
+.nav-toggle-checkbox:checked ~ .site-nav {
+  max-height: 20rem;
+}
+
+/* Users who have asked their OS to reduce motion get an instant toggle
+   instead of the sliding animation */
+@media (prefers-reduced-motion: reduce) {
+  .site-nav {
+    transition: none;
+  }
+}
+
+/* Highlight the hovered link and whichever page is currently open */
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--orange);
+}
+
+/* Base button shape; colour/fill comes from the modifier classes below */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  border: 0;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+}
+
+/* Loud call-to-action, e.g. "Scan a label" */
+.btn-primary {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+/* Quiet outline button for secondary actions */
+.btn-secondary {
+  border: 0.125rem solid var(--teal);
+  background-color: transparent;
+}
+
+/* Solid teal fill, used for form submits and confirmations */
+.btn-solid {
+  background-color: var(--teal);
+  color: var(--white);
+}
+
+/* Shared mobile default for every multi-item layout block: stacked column */
+.hero,
+.scan-layout,
+.results-grid,
+.feature-grid,
+.footer-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Homepage banner: copy block stacked above the photo on mobile */
+.hero {
+  background-color: var(--pale);
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.hero-copy {
+  padding: 1.5rem;
+}
+
+/* Small uppercase eyebrow label above a heading */
+.kicker {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin: 0 0 0.75rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+}
+
+/* Fluid heading: scales with viewport width between the two rem limits */
+h1 {
+  font-size: clamp(1.75rem, 1.2rem + 2.5vw, 3rem);
+  color: var(--teal);
+}
+
+h2 {
+  font-size: 1.35rem;
+  color: var(--teal);
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Teal fallback shows while the hero photo loads */
+.hero-visual {
+  min-height: 14rem;
+  background-color: var(--teal);
+}
+
+.hero-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 14rem;
+  object-fit: cover;
+}
+
+/* Shared card look for search box, panels, and cards */
+.search-box,
+.confirm-panel,
+.result-card,
+.feature-card,
+.camera-panel {
+  background-color: var(--white);
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
+  padding: 1.25rem;
+}
+
+.search-box {
+  background-color: var(--cream);
+}
+
+/* Visually-present label above the search input */
+.search-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Input + submit button stack on mobile, sit side by side from 48rem */
+.search-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.search-row input {
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--ink);
+  background-color: var(--white);
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
+  padding: 0.75rem 1.1rem;
+}
+
+.search-row input:focus {
+  outline: 0.125rem solid var(--teal);
+  outline-offset: 0.125rem;
+}
+
+.search-hint {
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Suggested-search chips and the scanned-additive list share a stacked layout */
+.chip-row,
+.additive-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chip,
+.additive-item {
+  background-color: var(--white);
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+}
+
+.feature-card {
+  background-color: var(--cream);
+  border: 0;
+}
+
+/* Square icon tile shown at the top of each feature card */
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.25rem;
+  background-color: var(--pale);
+  color: var(--teal);
+  margin-bottom: 1rem;
+}
+
+.icon i {
+  font-size: 1.25rem;
+}
+
+/* Scan page: intro row above the camera + confirm-list layout */
+.scan-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Step-progress pills (1 of 2, 2 of 2) */
+.scan-steps {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.scan-step {
+  width: 3rem;
+  height: 0.5rem;
+  border-radius: 999rem;
+  background-color: var(--line);
+}
+
+.scan-step.is-active {
+  background-color: var(--teal);
+}
+
+/* Dark panel holding the live camera preview */
+.camera-panel {
+  background-color: var(--teal);
+  color: var(--white);
+  border: 0;
+  border-radius: 0.25rem;
+  padding: 1.25rem;
+}
+
+.camera-frame {
+  position: relative;
+  min-height: 20rem;
+  border: 0.125rem solid var(--white);
+  border-radius: 0.25rem;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+.camera-frame video {
+  display: block;
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+
+/* Overlay prompt shown until the camera stream starts playing */
+.camera-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.camera-overlay[hidden] {
+  display: none;
+}
+
+.camera-overlay p {
+  margin: 0;
+  background-color: var(--white);
+  color: var(--teal);
+  border-radius: 0.25rem;
+  padding: 0.5rem 1.25rem;
+}
+
+/* Cancel/Capture and Rescan/Confirm rows: equal-width buttons side by side */
+.camera-actions,
+.confirm-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.camera-actions .btn,
+.confirm-actions .btn {
+  flex: 1;
+  min-height: 3.5rem;
+}
+
+.btn-camera-cancel,
+.btn-camera-capture {
+  border-radius: 0.25rem;
+}
+
+.btn-camera-cancel {
+  background-color: var(--white);
+  color: var(--teal);
+}
+
+.btn-camera-capture {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+/* Panel listing what the scan detected, next to the camera */
+.confirm-panel {
+  background-color: var(--cream);
+}
+
+.confirm-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.confirm-head h2 {
+  margin: 0;
+}
+
+/* One detected additive row: icon, name + note, status tag */
+.additive-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
+  background-color: var(--white);
+  color: var(--teal);
+}
+
+.item-copy {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.2rem;
+}
+
+/* Visible label for the note field: Madison-style users (moderate tech
+   literacy) need a real label, not just a placeholder that vanishes on focus */
+.confirm-note-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-top: 1.25rem;
+}
+
+/* Optional free-text note the shopper can add to a scan */
+.confirm-note {
+  display: block;
+  width: 100%;
+  min-height: 3.5rem;
+  margin: 0.5rem 0 1rem;
+  padding: 0.75rem 1rem;
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
+  background-color: var(--white);
+  font: inherit;
+}
+
+/* Return-visit list on the results page: a plain stacked list is enough
+   since each row only needs a name and a status tag, no card padding */
+.saved-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.saved-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background-color: var(--cream);
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+}
+
+.saved-name {
+  font-weight: 700;
+}
+
+/* Small status pill, e.g. "Thickener" or "Review" */
+.tag {
+  font-size: 0.8rem;
+  background-color: var(--pale);
+  color: var(--teal);
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.7rem;
+  width: fit-content;
+}
+
+.result-card .tag {
+  margin-bottom: 1rem;
+}
+
+/* Four-column link/info block, stacked on mobile, in a row from 48rem */
+.site-footer {
+  border-top: 0.0625rem solid var(--line);
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  margin: 0 0 0.5rem;
+}
+
+/* Responsive table: scrolls sideways instead of squashing columns */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
+}
+
+.compare-table {
+  width: 100%;
+  min-width: 40rem;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.compare-table caption {
+  text-align: left;
+  font-weight: 700;
+  color: var(--teal);
+  background-color: var(--pale);
+  padding: 0.75rem 1rem;
+}
+
+.compare-table th,
+.compare-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 0.0625rem solid var(--line);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.compare-table thead th {
+  background-color: var(--cream);
+  color: var(--teal);
+}
+
+.compare-table tbody tr:nth-child(even) {
+  background-color: var(--pale);
+}
+
+/* Off-screen text for headings screen readers need but the layout doesn't */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Contact page: form card stacked above the "other ways to reach us" panel
+   on mobile; sits beside it from the tablet breakpoint (flex, not grid,
+   since it's just two blocks in a row) */
+.contact-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-form {
+  background-color: var(--white);
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
+  padding: 1.25rem;
+}
+
+.contact-form fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.contact-form fieldset:last-of-type {
+  margin-bottom: 0;
+}
+
+.contact-form legend {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--teal);
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+/* Name/email/phone as a CSS Grid: single column on mobile, two columns
+   from the tablet breakpoint below */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.contact-form fieldset > .field {
+  margin-bottom: 1.25rem;
+}
+
+.contact-form fieldset > .field:last-child {
+  margin-bottom: 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field label,
+.field-legend {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  font: inherit;
+  color: var(--ink);
+  background-color: var(--white);
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 0.125rem solid var(--teal);
+  outline-offset: 0.125rem;
+}
+
+.field textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.field-hint {
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
+/* Radio/checkbox groups: stacked rows with roomy tap targets for mobile */
+.choice-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.choice-group-inline {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.choice-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+.choice-group input {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex-shrink: 0;
+}
+
+/* Reset/Send buttons stack on mobile, sit side by side from the tablet
+   breakpoint (same equal-width pattern as .confirm-actions) */
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.form-actions .btn {
+  min-height: 3.5rem;
+}
+
+.contact-aside {
+  background-color: var(--teal);
+  color: var(--white);
+  border-radius: 0.25rem;
+  padding: 1.25rem;
+}
+
+.contact-aside h2 {
+  color: var(--white);
+}
+
+.contact-aside p:last-child {
+  margin-bottom: 0;
+}
+
+/* Breakpoint 1 (tablet/desktop, >=48rem): nav goes inline, grids kick in */
+@media (min-width: 48rem) {
+  .site-header,
+  .site-footer,
+  main > section {
+    padding: 1.5rem 2.5rem;
+  }
+
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-toggle-label {
+    display: none;
+  }
+
+  .site-nav {
+    order: 0;
+    flex-basis: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.75rem;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .scan-intro {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .hero,
+  .scan-layout,
+  .footer-grid,
+  .contact-layout {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  /* Form takes the wider column, "other ways to reach us" sits alongside */
+  .contact-form {
+    width: 65%;
+  }
+
+  .contact-aside {
+    width: 35%;
+  }
+
+  /* Name/email/phone move from one column to two once there's room */
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-actions {
+    flex-direction: row;
+  }
+
+  .camera-frame,
+  .camera-frame video {
+    min-height: 32.5rem;
+    height: 32.5rem;
+  }
+
+  .hero-copy {
+    width: 50%;
+    padding: 3rem;
+  }
+
+  .hero-visual {
+    width: 50%;
+    min-height: 22rem;
+  }
+
+  .hero-visual img {
+    min-height: 22rem;
+  }
+
+  .hero-actions,
+  .search-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .search-row input {
+    flex: 1;
+  }
+
+  /* Switch from stacked flex to a 3-column CSS Grid */
+  .feature-grid,
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .scan-layout > * {
+    width: 50%;
+  }
+
+  .footer-grid > * {
+    width: 25%;
+  }
+}
+
+/* Breakpoint 2 (wide desktop, >=64rem): roomier hero split and spacing */
+@media (min-width: 64rem) {
+  .site {
+    max-width: 80rem;
+  }
+
+  .site-header,
+  .site-footer,
+  main > section {
+    padding: 2rem 3rem;
+  }
+
+  .hero-copy {
+    width: 45%;
+    padding: 4rem;
+  }
+
+  .hero-visual {
+    width: 55%;
+  }
+
+  .feature-grid,
+  .results-grid {
+    gap: 2rem;
+  }
+
+  .compare-table {
+    font-size: 1rem;
+  }
+}
