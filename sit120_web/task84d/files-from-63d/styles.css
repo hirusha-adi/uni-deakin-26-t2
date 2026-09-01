@@ -7,6 +7,8 @@
   --pale: #e5efec;
   --white: #ffffff;
   --line: #e7e5e4;
+  --error: #b3261e;
+  --success: #1b7a3d;
 }
 
 /* Predictable box sizing for all elements */
@@ -908,4 +910,74 @@ p {
   .compare-table {
     font-size: 1rem;
   }
+}
+
+/* contact.js validation states + the 3 enhancements live below - moved off
+   HTML5 validation for 8.4D so all this styling is driven by JS toggling
+   classes now instead of :invalid/:valid pseudo-classes */
+
+/* red/green border on whatever field contact.js just checked */
+.field.is-invalid input,
+.field.is-invalid select,
+.field.is-invalid textarea {
+  border-color: var(--error);
+}
+
+.field.is-valid input,
+.field.is-valid select,
+.field.is-valid textarea {
+  border-color: var(--success);
+}
+
+/* the actual error/success text under each field */
+.field-feedback {
+  display: block;
+  min-height: 1.1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.field-feedback.is-error {
+  color: var(--error);
+}
+
+.field-feedback.is-success {
+  color: var(--success);
+}
+
+/* character counter turns red once you go over the limit */
+#message-counter.is-over-limit {
+  color: var(--error);
+  font-weight: 700;
+}
+
+/* the extra scan-date/additive fields that pop up depending on the reason picked */
+.scan-details {
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: var(--cream);
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
+}
+
+.scan-details[hidden] {
+  display: none;
+}
+
+/* banner that appears once everything's validated and "sent" */
+.form-success {
+  background-color: var(--pale);
+  border: 0.0625rem solid var(--success);
+  border-radius: 0.25rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  color: var(--success);
+}
+
+.form-success p {
+  margin: 0;
+}
+
+.form-success[hidden] {
+  display: none;
 }
