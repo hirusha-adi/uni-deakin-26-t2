@@ -1,11 +1,13 @@
 <template>
   <div id="app-layout">
-    <!-- TODO: Assemble the HeaderComponent, MainContent layout core, and FooterComponent -->
+    <HeaderComponent />
+    <MainContent />
+    <FooterComponent />
   </div>
 </template>
 
 <script setup>
-// TODO: Import the MainContent child layout component
+import MainContent from './components/MainContent.vue'
 </script>
 
 <style>

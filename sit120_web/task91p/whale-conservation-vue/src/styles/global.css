@@ -1,12 +1,111 @@
-/* TODO: Add a universal box-sizing reset rule */
-/* TODO: Add base body styles (font-family, line-height, color, background-color) */
-/* TODO: Add mobile-first base spacing and layout */
+/* Universal box-sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-/* TODO: Add anchor link and button base styles */
-/* TODO: Add heading hierarchy styles (h1, h2, h3) */
-/* TODO: Add form input, textarea, and label base styles */
+/* Base body styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background-color: #f2f5f7;
+}
 
-/* TODO: Add responsive media query for desktop (1024px and above) */
-/* @media (min-width: 1024px) {
-TODO: Add desktop-specific adjustments to spacing, layout, typography
-} */
+/* Mobile-first base spacing and layout */
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Anchor link and button base styles */
+a {
+  color: #0b3d66;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #0b3d66;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Heading hierarchy styles */
+h1,
+h2,
+h3 {
+  color: #0b3d66;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  border-bottom: 2px solid #0b3d66;
+  padding-bottom: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Form input, textarea, and label base styles */
+label {
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid #0b3d66;
+  outline-offset: 1px;
+}
+
+/* Responsive media query for desktop (1024px and above) */
+@media (min-width: 1024px) {
+  body {
+    font-size: 1.05rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+}
