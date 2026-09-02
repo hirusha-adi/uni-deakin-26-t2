@@ -20,10 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const MESSAGE_MAX_LENGTH = 600;
   const SCAN_RELATED_REASONS = ["incorrect-match", "feedback"];
 
-  // just checks for something@something.something, not trying to be a full RFC email validator
-  const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
-  // aussie phone number, 10 digits starting with 0 (no spaces/dashes), e.g. 0400000000
-  const PHONE_PATTERN = /^0\d{9}$/;
+  // RFC 5322 "official standard" email pattern, copied straight from
+  // https://www.regular-expressions.info/email.html - yes it's huge, that's
+  // the actual spec-accurate one (quoted local parts, IP-literal domains, all of it)
+  const EMAIL_PATTERN = /^(?:[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/i;
+
+  // E.164 international format, which is what RFC 3966's tel URI spec uses
+  // for global numbers - https://www.rfc-editor.org/rfc/rfc3966.html (section 3,
+  // "global-number-digits"). + then 1-15 digits, first digit after + isn't 0
+  const PHONE_PATTERN = /^\+[1-9]\d{1,14}$/;
 
   function checkName() {
     const value = nameInput.value.trim();
@@ -53,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return { isValid: true, message: "" }; // phone is optional, empty is fine
     }
     if (!PHONE_PATTERN.test(value)) {
-      return { isValid: false, message: "Enter a 10-digit number starting with 0, e.g. 0400000000." };
+      return { isValid: false, message: "Enter your number in international format, e.g. +61400000000." };
     }
     return { isValid: true, message: "Looks good." };
   }
