@@ -1,9 +1,14 @@
 <template>
   <section id="contact">
+    <!-- TODO: Add contact section heading and description -->
+    <!-- DONE -->
     <h2>Contact Us</h2>
     <p>If you have any questions or would like to get involved, please reach out to us. We would love to hear from you!</p>
 
     <form @submit.prevent="handleSubmit">
+      <!-- TODO: Add form elements for name, email, and message -->
+      <!-- Use v-model to bind each distinct form element to your reactive state -->
+      <!-- DONE -->
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" v-model="formData.name" required>
 
@@ -13,6 +18,8 @@
       <label for="message">Message:</label>
       <textarea id="message" name="message" rows="4" v-model="formData.message" required></textarea>
 
+      <!-- TODO: Add standard form submit button -->
+      <!-- DONE -->
       <button type="submit">Send Message</button>
     </form>
 
@@ -25,23 +32,39 @@
 <script setup>
 import { ref } from 'vue'
 
+// TODO: Create reactive state for a form data property object
+// DONE
 const formData = ref({
   name: '',
   email: '',
   message: ''
 })
 
+// TODO: Create reactive state named 'showConfirmation' for showing/hiding the confirmation box
+// DONE
 const showConfirmation = ref(false)
+
+// TODO: Create reactive state for tracking the submitted name
+// DONE
 const submittedName = ref('')
 
 function handleSubmit() {
+  // TODO: Validate that required fields are completely filled
+  // DONE
   if (!formData.value.name || !formData.value.email || !formData.value.message) {
     return
   }
 
+  // TODO: Capture and store the submitted user name
+  // DONE
   submittedName.value = formData.value.name
+
+  // TODO: Toggle the showConfirmation message state to true
+  // DONE
   showConfirmation.value = true
 
+  // TODO: Clear all bound form entry properties
+  // DONE
   formData.value = { name: '', email: '', message: '' }
 }
 </script>
@@ -78,4 +101,7 @@ form button:hover {
   border: 1px solid #c3e6cb;
   border-radius: 6px;
 }
+
+/* TODO: Add localised UI presentation styles for your form input elements */
+/* DONE */
 </style>

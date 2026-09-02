@@ -2,9 +2,13 @@
   <main>
     <!-- Featured: Whale Conservation Section -->
     <section id="feature">
+      <!-- TODO: Add featured section content from the provided HTML template -->
+      <!-- DONE -->
       <h2>Featured: Whale Conservation</h2>
       <p>Learn about our efforts to protect whale populations worldwide and how you can help. Our mission is to raise
         awareness and support for whale conservation through education, advocacy, and community involvement.</p>
+
+      <!-- Dynamic image binding: whaleImg is imported from assets/ above -->
       <div class="feature-media">
         <img :src="whaleImg" alt="Whales in the ocean">
         <a href="#donate" class="btn-help">Help the Whale</a>
@@ -13,6 +17,8 @@
 
     <!-- About Us Section -->
     <section id="about">
+      <!-- TODO: Add about section content from the provided HTML template -->
+      <!-- DONE -->
       <h2>About Us</h2>
       <p>We are dedicated to preserving whale species and their habitats through education and advocacy. Founded in
         2001, our organisation has been at the forefront of whale conservation, working with global partners to
@@ -31,6 +37,9 @@
 
     <!-- Donate Section -->
     <section id="donate">
+      <!-- TODO: Add donate section content from the provided HTML template -->
+      <!-- NOTE: This specific form uses standard HTML validation only; do not add Vue reactivity here -->
+      <!-- DONE -->
       <h2>Donate</h2>
       <p>Your contribution helps fund important research and conservation projects. Every donation, big or small,
         makes a difference in protecting whale populations and preserving their natural habitats.</p>
@@ -43,7 +52,6 @@
         <li>Advocacy for stronger conservation policies</li>
       </ul>
       <h3>Donation Form</h3>
-      <!-- NOTE: This specific form uses standard HTML validation only; do not add Vue reactivity here -->
       <form>
         <label for="donor-name">Name:</label>
         <input type="text" id="donor-name" name="donor-name" required>
@@ -55,16 +63,23 @@
       </form>
     </section>
 
+    <!-- TODO: Render the locally imported ContactForm component here -->
+    <!-- DONE -->
     <ContactForm />
   </main>
 </template>
 
 <script setup>
+// Import the local asset so the Vite compiler asset pipeline processes it correctly
 import whaleImg from '../assets/whale-image.jpg'
+// TODO: Import ContactForm from './ContactForm.vue'
+// DONE
 import ContactForm from './ContactForm.vue'
 </script>
 
 <style scoped>
+/* TODO: Add layout styles specific to MainContent templates */
+/* DONE */
 main {
   flex: 1;
   display: flex;

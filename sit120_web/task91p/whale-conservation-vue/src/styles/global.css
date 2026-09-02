@@ -1,11 +1,13 @@
-/* Universal box-sizing reset */
+/* TODO: Add a universal box-sizing reset rule */
+/* DONE */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Base body styles */
+/* TODO: Add base body styles (font-family, line-height, color, background-color) */
+/* DONE */
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -14,14 +16,16 @@ body {
   background-color: #f2f5f7;
 }
 
-/* Mobile-first base spacing and layout */
+/* TODO: Add mobile-first base spacing and layout */
+/* DONE */
 #app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* Anchor link and button base styles */
+/* TODO: Add anchor link and button base styles */
+/* DONE */
 a {
   color: #0b3d66;
   text-decoration: none;
@@ -45,7 +49,8 @@ button:hover {
   opacity: 0.9;
 }
 
-/* Heading hierarchy styles */
+/* TODO: Add heading hierarchy styles (h1, h2, h3) */
+/* DONE */
 h1,
 h2,
 h3 {
@@ -69,7 +74,8 @@ h3 {
   margin-bottom: 0.5rem;
 }
 
-/* Form input, textarea, and label base styles */
+/* TODO: Add form input, textarea, and label base styles */
+/* DONE */
 label {
   font-weight: 600;
   margin-top: 0.5rem;
@@ -91,7 +97,8 @@ textarea:focus {
   outline-offset: 1px;
 }
 
-/* Responsive media query for desktop (1024px and above) */
+/* TODO: Add responsive media query for desktop (1024px and above) */
+/* DONE */
 @media (min-width: 1024px) {
   body {
     font-size: 1.05rem;

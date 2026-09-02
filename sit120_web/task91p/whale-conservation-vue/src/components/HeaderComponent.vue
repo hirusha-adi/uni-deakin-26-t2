@@ -1,5 +1,7 @@
 <template>
   <header>
+    <!-- TODO: Add header content from the provided HTML template -->
+    <!-- DONE -->
     <h1>Save the Whales</h1>
     <a href="#donate" class="btn-donate">Donate Now</a>
   </header>
@@ -10,6 +12,8 @@
 </script>
 
 <style scoped>
+/* TODO: Style the header */
+/* DONE */
 header {
   display: flex;
   align-items: center;
