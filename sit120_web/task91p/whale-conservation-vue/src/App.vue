@@ -1,7 +1,17 @@
+<template>
+  <div id="app-layout">
+    <!-- TODO: Assemble the HeaderComponent, MainContent layout core, and FooterComponent -->
+  </div>
+</template>
+
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+// TODO: Import the MainContent child layout component
 </script>
 
-<template>
-  <HelloWorld />
-</template>
+<style>
+#app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+</style>

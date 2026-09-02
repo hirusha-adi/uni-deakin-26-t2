@@ -1,5 +1,13 @@
 import { createApp } from 'vue'
-import './style.css'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+// Import global stylesheet
+import './styles/global.css'
+
+// TODO: Import HeaderComponent and FooterComponent
+
+const app = createApp(App)
+
+// TODO: Register HeaderComponent and FooterComponent globally using app.component()
+
+// TODO: Mount the application to the target '#app' container defined in index.html
